@@ -2,7 +2,7 @@
  * @author Aishah Qureshi aishah.s.qureshi@gmail.com | 200100227
  */
 
-package com.example.mentormatching.model;
+package com.company.src.main.java.com.example.mentormatching.model;
 
 public class Account {
     private String email;
@@ -16,7 +16,7 @@ public class Account {
      * @param  String  email
      * @param  String  password
      * @param  String  pin
-     * @return null
+     * @return void
      */
     public Account(String email, String password, String pin){
         this.email=email;
@@ -29,7 +29,7 @@ public class Account {
      *
      * @param  String  email
      * @param  String  password
-     * @return null
+     * @return void
      */
     public Account(String email, String password){
         this.email=email;
