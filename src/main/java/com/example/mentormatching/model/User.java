@@ -145,4 +145,22 @@ public class User extends Account {
         messagesReceived.add(new Message(message, sender));
     }
 
+    /*
+     * Gets all messages the user has sent to a specified user
+     *
+     * This will be used when constructing messages pages for users
+     *
+     * @param  User user
+     * @return ArrayList<Message>
+     */
+    public ArrayList<Message> getMessagesTo(User user){
+        ArrayList<Message> myMessages=new ArrayList<Message>();
+        for(Message message: user.messagesReceived){
+            if(message.getSender()==this){
+                myMessages.add(message);
+            }
+        }
+        return myMessages;
+    }
+
 }
