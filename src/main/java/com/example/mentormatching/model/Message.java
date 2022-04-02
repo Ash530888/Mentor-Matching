@@ -27,4 +27,8 @@ public class Message {
         this.date=LocalDate.now();
         this.time=LocalTime.now();
     }
+
+    public User getSender() {
+        return sender;
+    }
 }
