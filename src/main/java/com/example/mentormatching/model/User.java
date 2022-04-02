@@ -11,7 +11,6 @@ public class User extends Account {
     private Mentor mentorRole;
     private ArrayList<Profile> savedProfiles;
     private Profile profile;
-    private ArrayList<Message> messagesSent;
     private ArrayList<Message> messagesReceived;
 
     /*
