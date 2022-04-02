@@ -10,6 +10,7 @@ import java.time.LocalTime;
 
 public class Message {
     private String text;
+    private User sender;
     private LocalDate date;
     private LocalTime time;
 
@@ -17,10 +18,12 @@ public class Message {
      * Constructor
      *
      * @param  String  text
+     * @param  User sender
      * @return void
      */
-    public Message(String text){
+    public Message(String text, User sender){
         this.text=text;
+        this.sender=sender;
         this.date=LocalDate.now();
         this.time=LocalTime.now();
     }
