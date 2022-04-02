@@ -11,6 +11,8 @@ public class User extends Account {
     private Mentor mentorRole;
     private ArrayList<Profile> savedProfiles;
     private Profile profile;
+    private ArrayList<Message> messagesSent;
+    private ArrayList<Message> messagesReceived;
 
     /*
      * Constructor
@@ -128,8 +130,19 @@ public class User extends Account {
      * @param  User user
      * @return void
      */
-    public void sendMessageToUser(String message, User user){
+    public void sendMessage(String message, User user){
+        user.receiveMessage(message, this);
+    }
 
+    /*
+     * Saves a message from specified sender to log of messages (messagesReceived)
+     *
+     * @param  String message
+     * @param  User sender
+     * @return void
+     */
+    public void receiveMessage(String message, User sender){
+        messagesReceived.add(new Message(message, sender));
     }
 
 }
