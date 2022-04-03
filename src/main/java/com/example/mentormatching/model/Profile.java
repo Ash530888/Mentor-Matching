@@ -2,7 +2,7 @@
  * @author Leena Neyazi ec20300@qmul.ac.uk | 200201188
  */
 
-package com.example.mentormatching.model;
+package com.company.src.main.java.com.example.mentormatching.model;
 
 import java.util.ArrayList;
 
