@@ -4,9 +4,11 @@
 
 package com.example.mentormatching.model;
 
+import java.util.ArrayList;
+
 public class Profile {
-    private User profileUser;
-    private Field[] fields;
+//    private User profileUser;
+    private ArrayList<Field<Object>> fields;
 
      /*
      * Constructor
@@ -14,7 +16,7 @@ public class Profile {
      * @param  User  profileUser
      * @return null
      */
-    public Profile(User profileUser){
+   /* public Profile(User profileUser){
         this.profileUser = profileUser;
     }
 
@@ -29,33 +31,28 @@ public class Profile {
                 return fields[i];
             }
         }
+    }*/
+
+    public <T> void editField(String fieldName, Field<T> newField, T newData){
+        newField.setData(newData);
     }
 
-    public void editField(String fieldName, Field newField){
-    
-    }
-
-    public Field[] getFields(){
+    public ArrayList<Field<Object>> getFields(){
         return fields;
     }
 
-    public void addField(Field field){
-        int n = fields.length;
-        Field newArr[] = new Field[n + 1];
-        for (int i = 0; i < n; i++) {
-            newArr[i] = fields[i];
-        }
-        newArr[n] = field;
-        fields = newArr;
+    public void addField(Field<Object> field){
+        fields.add(field);
     }
 
     public boolean hasField(String fieldName){
-        int n = fields.length;
-        for (int i = 0; i < n; i++) {
-            if ((fields[i].getName()).equals(fieldName)){
-                return true;
+        boolean found = false;
+        for (Field<Object> field : fields){
+            if (fieldName.equals(field.getName())){
+                found = true;
+                break;
             }
         }
-        return false;
+        return found;
     }
 }
