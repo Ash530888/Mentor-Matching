@@ -8,6 +8,7 @@ public class Account {
     private String email;
     private String password;
     private String pin;
+    private String role;
 
 
     /*
@@ -18,10 +19,11 @@ public class Account {
      * @param  String  pin
      * @return null
      */
-    public Account(String email, String password, String pin){
+    public Account(String email, String password, String pin, String role){
         this.email=email;
         this.password=password;
         this.pin=pin;
+        this.role = role;
     }
 
     /*
@@ -58,5 +60,13 @@ public class Account {
 
     public void setPin(String pin) {
         this.pin = pin;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

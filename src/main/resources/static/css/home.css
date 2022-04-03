@@ -1,0 +1,43 @@
+
+
+
+body{
+    background-color: #f3f2ef;
+}
+
+header{
+    height: 4rem;
+    width: vm;
+    background-color: white;
+    padding: 0 8rem 0 8rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.leftNav, .rightNav{
+    display: flex;
+}
+
+.leftNav{
+    padding-top: 30px;
+}
+
+.tabItems{
+    display: flex;
+}
+.tabItem{
+    width: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+
+
+.rightNav{
+    height: 100%;
+}
