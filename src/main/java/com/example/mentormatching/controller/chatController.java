@@ -16,6 +16,7 @@ import java.util.List;
 public class chatController {
 
 
+
     @GetMapping("/chat")
     public String showChat(Model model){
 
