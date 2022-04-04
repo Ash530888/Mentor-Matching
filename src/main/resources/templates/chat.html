@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <link rel="stylesheet" href="../static/css/home.css" th:href="@{/css/home.css}">
+  <link rel="stylesheet" href="../static/css/chat.css" th:href="@{/css/chat.css}">
+  <link rel="stylesheet" href="../static/css/reset.css" th:href="@{/css/reset.css}">
+
+
+
+
+</head>
+
+
+<main>
+    <header th:replace="commonComponents :: header"></header>
+
+    <div class="chatContainer">
+      <header>
+
+        <div class="title">
+          <p>Message</p>
+
+        </div>
+
+
+      </header>
+
+      <div class="container">
+
+        <div class="userWindow">
+
+          <div class="userHead">
+            <h3>People</h3>
+
+          </div>
+
+          <div class="userList">
+
+
+
+            <a th:each="name:${names}" th:href="@{'/getChat/'+${name}}"  >Fatin</a>
+
+
+          </div>
+
+        </div>
+
+        <div class="chatWindow">
+
+          <div th:if="${relation != null}" class="chat">
+            <div  class="message incoming" th:each="message: ${relation.getMessages()}">
+              <h5 th:value="${message.who}">Jarvis</h5>
+              <p th:value="${message.message}">Hello Ultron</p>
+            </div>
+
+  <!--          <div class="message outgoing">-->
+  <!--            <h5>Veronica</h5>-->
+  <!--            <p>Welcome Jarvis</p>-->
+
+  <!--          </div>-->
+          </div>
+
+
+          <div th:if="${relation != null}" class="userInput">
+            <input type="text" placeholder="Type your message">
+            <button>SEND</button>
+          </div>
+          <div th:unless="${relation != null}">
+            sdf
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+
+
+
+</html>

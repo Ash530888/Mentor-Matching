@@ -1,11 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
 <h1>Works</h1>
+<li  sec:authorize="!isAnonymous()">
+
+    <h1>Authenticated</h1>
+
+    <h1 sec:authorize="hasRole('ROLE_USER')">
+        Hello
+    </h1>
+
+
+</li>
 
 </body>
 </html>
