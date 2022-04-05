@@ -1,6 +1,8 @@
 package com.example.mentormatching.model;
 
+
 /**
+ *
  * @author KennethMartin <k.a.martin@se20.qmul.ac.uk> | ec20844
  *
  * Generic class for storing arbitrary type data for profile fields.
@@ -10,8 +12,8 @@ package com.example.mentormatching.model;
  * It contains additional parameters describing the field's name, type, and privacy.
  *
  */
-
 public class Field<T>{
+
     /**
      * The main data payload of the Field. It can be any type, from arraylist to primitive.
      */
@@ -24,44 +26,51 @@ public class Field<T>{
      * The type of the Field, referring to None, Mentor, Mentee.
      * TODO Create an enum for the possible types of this class field
      */
-    private String type;
+    private FieldTypeState type;
     /**
      * The privacy of the Field, referring to All, Mentors, currentMentor, Private
      * TODO refine the possible types of this field, and add enum for them
      */
-    private String privacy;
+    private FieldPrivacyState privacy;
 
     /**
      * Constructor for the class Field with established data payload
      * @param data the data payload stored in the field
      * @param name the label/name of the field
-     * @param type the type of field, corresponding to Mentor/Mentee/All
-     * @param privacy the privacy level of the field, corresponding t
      */
-    public Field(T data, String name, String type, String privacy) {
+    public Field(T data, String name) {
         this.data = data;
         this.name = name;
-        this.type = type;
-        this.privacy = privacy;
+        this.type = FieldTypeState.DefaultField;
+        this.privacy = FieldPrivacyState.All;
+    }
+    /**
+     * Overloaded constructor for the class with an empty data field
+     * @param name the label/name of the field
+     */
+    public Field(String name) {
+        this.name = name;
+        this.type = FieldTypeState.DefaultField;
+        this.privacy = FieldPrivacyState.All;
     }
 
     /**
      * Overloaded constructor for the class with an empty data field
      * @param name the label/name of the field
      * @param type the type of field, corresponding to Mentor/Mentee/All
-     * @param privacy the privacy of the field, can have the possible privacy levels of the class
+     * @param privacyState the privacy of the field, can have the possible privacy levels of the class
      */
-    public Field(String name, String type, String privacy) {
+    public Field(String name, String type, FieldPrivacyState privacyState) {
         this.name = name;
-        this.type = type;
-        this.privacy = privacy;
+        this.type = FieldTypeState.DefaultField;
+        this.privacy = privacyState;
     }
 
     /**
      * Getter for the Field Type
      * @return String Type
      */
-    public String getType() {
+    public FieldTypeState getType() {
         return type;
     }
 
@@ -93,7 +102,19 @@ public class Field<T>{
      *  Getter for the privacy class field
      * @return the privacy of the field
      */
-    public String getPrivacy() {
+    public FieldPrivacyState getPrivacy() {
         return privacy;
     }
+}
+enum FieldPrivacyState{
+    All,
+    Mentors,
+    CurrentMentor,
+    Private
+}
+
+enum FieldTypeState {
+    MenteeField,
+    MentorField,
+    DefaultField
 }
