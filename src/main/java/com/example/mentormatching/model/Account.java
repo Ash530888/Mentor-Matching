@@ -17,6 +17,7 @@ public class Account {
      * @param  String  email
      * @param  String  password
      * @param  String  pin
+     * @param  String  role
      * @return void
      */
     public Account(String email, String password, String pin, String role){
@@ -28,6 +29,20 @@ public class Account {
 
     public Account(){
         this.role = "USER";
+    }
+
+    /*
+     * Constructor
+     *
+     * @param  String  email
+     * @param  String  password
+     * @param  String  pin
+     * @return void
+     */
+    public Account(String email, String password, String pin){
+        this.email=email;
+        this.password=password;
+        this.pin=pin;
     }
 
     /*
