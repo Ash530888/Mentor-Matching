@@ -162,4 +162,12 @@ public class User extends Account {
         return myMessages;
     }
 
+    /*
+     * Getter for profile
+     *
+     * @return Profile
+     */
+    public Profile getProfile() {
+        return profile;
+    }
 }

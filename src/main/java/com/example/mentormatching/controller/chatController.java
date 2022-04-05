@@ -1,9 +1,9 @@
-package com.example.mentormatching.controller;
+package com.company.src.main.java.com.example.mentormatching.controller;
 
 
-import com.example.mentormatching.model.MenteeRelationship;
-import com.example.mentormatching.model.Mentor;
-import com.example.mentormatching.model.Message;
+import com.company.src.main.java.com.example.mentormatching.model.MenteeRelationship;
+import com.company.src.main.java.com.example.mentormatching.model.Mentor;
+import com.company.src.main.java.com.example.mentormatching.model.Message;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
