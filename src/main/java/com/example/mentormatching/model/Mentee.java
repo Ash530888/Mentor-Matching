@@ -1,4 +1,4 @@
-package com.company.src.main.java.com.example.mentormatching.model;
+package com.example.mentormatching.model;
 
 import java.util.List;
 

@@ -2,7 +2,7 @@
  * @author Aishah Qureshi aishah.s.qureshi@gmail.com | 200100227
  */
 
-package com.company.src.main.java.com.example.mentormatching.model;
+package com.example.mentormatching.model;
 
 public class Account {
     private String email;
