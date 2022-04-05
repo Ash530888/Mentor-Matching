@@ -1,4 +1,4 @@
-package com.example.mentormatching.model;
+package com.company.src.main.java.com.example.mentormatching.model;
 
 ///**
 // * @author Fatin Kazi <ec20431@qmul.ac.uk> | ec20431
