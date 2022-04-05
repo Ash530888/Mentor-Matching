@@ -1,4 +1,4 @@
-package com.example.mentormatching.controller;
+package com.company.src.main.java.com.example.mentormatching.controller;
 
 import com.example.mentormatching.model.User;
 import com.example.mentormatching.service.userService;
