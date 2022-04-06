@@ -7,16 +7,18 @@
 </head>
 <body>
 <h1>Works</h1>
-<li  sec:authorize="!isAnonymous()">
 
-    <h1>Authenticated</h1>
 
-    <h1 sec:authorize="hasRole('ROLE_USER')">
-        Hello
-    </h1>
+<li  sec:authorize="isAnonymous()">
+
+
+    <h1>Anonymous</h1>
+
 
 
 </li>
+
+
 
 </body>
 </html>

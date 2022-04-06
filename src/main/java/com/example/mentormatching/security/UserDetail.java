@@ -26,9 +26,12 @@ public class UserDetail implements UserDetails {
 
         List<GrantedAuthority> authorityList = new ArrayList<>();
         authorityList.add(new SimpleGrantedAuthority("ROLE_"+this.user.getRole()));
+        authorityList.add(new SimpleGrantedAuthority("ROLE_"+this.user.getUserRole()));
 
         return authorityList;
     }
+
+
 
     @Override
     public String getPassword() {return user.getPassword(); }
@@ -56,5 +59,13 @@ public class UserDetail implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

@@ -23,5 +23,7 @@ public class userService {
         return repo.dummyUsers();
     }
 
+    public void update(User userPrevious,User userCurrent){repo.update(userPrevious,userCurrent);}
+
 
 }

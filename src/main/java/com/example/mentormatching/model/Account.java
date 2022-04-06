@@ -26,6 +26,8 @@ public class Account {
         this.role = role;
     }
 
+    public Account(){}
+
     /*
      * Constructor
      *
