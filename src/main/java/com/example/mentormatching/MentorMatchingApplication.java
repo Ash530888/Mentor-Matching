@@ -13,11 +13,6 @@ public class MentorMatchingApplication {
         SpringApplication.run(MentorMatchingApplication.class, args);
     }
 
-    // testing
-    @GetMapping("/")
-    public List<String> testing(){
-        return List.of("hello","World");
-
-    }
+    
 
 }
