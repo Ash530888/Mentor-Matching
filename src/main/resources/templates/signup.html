@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <link rel="stylesheet" href="../static/css/reset.css" th:href="@{/css/reset.css}">
+    <link rel="stylesheet" href="../static/css/signup.css" th:href="@{/css/signup.css}">
+
+
+</head>
+<body>
+
+    <form class="container" th:action="@{/processSignup}" method="post" th:object="${user}">
+
+        <input type="hidden" th:field="*{userRole}" id="userRole" />
+
+        <div th:if="${update == false}" class="switch" >
+            <div class="MenteeSignUp"  onclick="document.getElementById('userRole').value = 'MENTEE'; tab1(); onlo">Mentee</div>
+            <div class="MentorSignUp" onclick="document.getElementById('userRole').value = 'MENTOR'; tab2()">Mentor</div>
+        </div>
+        <div th:unless="${update == false}" >
+            <div th:if="${user.userRole == 'MENTEE'}" >
+                <body onload="tab2();"></body>
+            </div>
+            <div th:unless="${user.userRole == 'MENTEE'}" >
+                <body  onload="tab2()"></body>
+            </div>
+        </div>
+
+        <div class="outer">
+            <div class="page" >
+                <label th:text="${update ==true}? 'Update' : 'Sign up'" >Sign up</label>
+
+<!--                th:value="${currentUser!=null}? ${currentUser.email}:'Email'"-->
+                    <div class="element">
+                        <input type="text"  th:field="*{email}"   >
+                    </div>
+                    <div class="element">
+                        <input type="text"  th:field="*{password}" >
+                    </div>
+
+
+            </div>
+
+
+            <div  class="form" >
+                <div class="page">
+                    <label >Test</label>
+                    <div class="element">
+                        <input type="text" placeholder="Email" >
+                        <input type="text" placeholder="Email" >
+
+                    </div>
+                    <div class="element">
+                        <input type="password" placeholder="Password">
+                    </div>
+
+                </div>
+
+                <div class="page">
+                    <label >Mentor</label>
+                    <div class="element">
+                        <input type="text" placeholder="Email" >
+                    </div>
+                    <div class="element">
+                        <input type="password" placeholder="Password">
+                    </div>
+                    <div class="element">
+                        <input type="password" placeholder="Password">
+                    </div>
+                    <div class="element">
+                        <input type="password" placeholder="Password">
+                    </div>
+
+                </div>
+
+
+
+
+
+            </div>
+
+            <button class="btn" type="submit" th:text="${update ==true}? 'Update' : 'Sign up'">Sign up</button>
+
+        </div>
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+<script>
+    const loginMentor = document.querySelector(".MenteeSignUp");
+    const loginMentee = document.querySelector(".MentorSignUp");
+    const form = document.querySelector(".form");
+    const switches = document.querySelectorAll(".switch");
+
+    let current = 1;
+    function tab2(){
+        form.style.marginLeft = "-100%";
+        loginMentor.style.background = "none";
+        loginMentee.style.background = "linear-gradient(45deg,#00d5fc,#056af6)";
+        switches[current-1].classList.add("active");
+
+    }
+
+    function tab1(){
+        form.style.marginLeft = "0";
+        loginMentee.style.background = "none";
+        loginMentor.style.background = "linear-gradient(45deg,#00d5fc,#056af6)";
+        switches[current-1].classList.remove("active");
+
+
+    }
+
+</script>
+
+
+
+</html>
