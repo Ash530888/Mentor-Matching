@@ -1,0 +1,124 @@
+
+
+
+body{
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f2ef;
+
+}
+
+.container{
+    position: relative;
+    align-items: center;
+    padding: 20px 30px;
+    width: 700px;
+    background-color: white;
+    border-radius: 4px;
+
+}
+
+.switch{
+    position: absolute;
+    right: 30px;
+    display: flex;
+    border-bottom: 1px solid crimson;
+}
+
+.switch::after{
+    content: '';
+    height: 6px ;
+    width: 60px;
+    background: crimson;
+    border-radius: 60px 60px 0 0;
+    position: absolute;
+    bottom: 0;
+    left:8px ;
+    transition: 0.3s ease;
+}
+.switch.active::after {
+    left: 82px;
+    width: 70px;
+
+}
+
+.MenteeSignUp{
+    padding: 5px 12px;
+    background: linear-gradient(45deg,#00d5fc,#056af6);
+    margin-bottom: 10px;
+    border-radius: 50px;
+    text-align: right;
+    margin-left: 4px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.MentorSignUp{
+    padding: 5px 12px;
+    background: linear-gradient(45deg,#00d5fc,#056af6);
+    margin-bottom: 10px;
+    border-radius: 50px;
+    text-align: right;
+    margin-left: 4px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.container .outer{
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.form{
+    width: 200%;
+    position: relative;
+    display: flex;
+    margin: auto;
+    transition: 0.2s ease-in-out;
+}
+
+.page{
+    margin: auto;
+    width: 100%;
+}
+label{
+    display: block;
+    margin-bottom: 5px;
+    padding: 10px 15px ;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 20px;
+
+}
+
+.element{
+    position: relative;
+}
+.element input{
+    width: 80%;
+    height: 40px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border: 1px solid #f3f2ef;
+    padding-left: 40px;
+    font-size: 20px;
+    letter-spacing: 1px;
+
+}
+
+.btn{
+    padding: 5px 25px;
+    background: crimson;
+    border-radius: 50px;
+    font-size: 25px;
+    margin-top: 5px;
+    cursor: pointer;
+
+}
