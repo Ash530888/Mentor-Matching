@@ -5,7 +5,7 @@
 >
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Sign up</title>
 
 
     <link rel="stylesheet" href="../static/css/reset.css" th:href="@{/css/reset.css}">
@@ -34,48 +34,189 @@
 
         <div class="outer">
             <div class="page" >
-                <label th:text="${update ==true}? 'Update' : 'Sign up'" >Sign up</label>
+                <label class="title" th:text="${update ==true}? 'Update' : 'Sign up'" >Sign up</label>
 
 <!--                th:value="${currentUser!=null}? ${currentUser.email}:'Email'"-->
                     <div class="element">
-                        <input type="text"  th:field="*{email}"   >
+                        <input placeholder="Email" type="email"  th:field="*{email}"   >
                     </div>
                     <div class="element">
-                        <input type="text"  th:field="*{password}" >
+                        <input placeholder="Password" type="text"  th:field="*{password}" >
                     </div>
 
 
             </div>
 
+            <div class="page" >
+                <div class="element">
+                    <input placeholder="Name" type="text"  th:field="*{name}"   >
+                </div>
+                <div class="element">
+                    <input placeholder="Age" type="number"  th:field="*{age}"   >
+                </div>
+                <div class="element">
+                    <label class="title" for="gender">Gender</label>
+
+                    <select name="gender" id="gender">
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="element">
+                    <input placeholder="Job Position" type="text"  th:field="*{jobPosition}"   >
+                </div>
+                <div class="element">
+                    <input placeholder="Location" type="text"  th:field="*{location}"   >
+                </div>
+                <div class="element">
+                    <input placeholder="Field of Work" type="text"  th:field="*{field}"   >
+                </div>
+                <div class="element">
+                    <input placeholder="Description" type="text"  th:field="*{description}"   >
+                </div>
+                <div>
+                    <label class="title">Disabilities</label>
+
+                    <label for="disability1"><input class="checkbox" type="checkbox" id="disability1" name="disability1" value="Blind"> Blind</label><br>
+
+                    <label for="disability2"><input class="checkbox" type="checkbox" id="disability2" name="disability2" value="Deaf"> Deaf</label><br>
+
+                    <label for="disability3"><input class="checkbox" type="checkbox" id="disability3" name="disability3" value="Impairments"> Physical Impairments</label><br>
+
+                    <label for="disability4"><input class="checkbox" type="checkbox" id="disability4" name="disability4" value="Dyslexia"> Dyslexia</label><br>
+
+                    <label for="disability5"><input class="checkbox" type="checkbox" id="disability5" name="disability5" value="Autism"> Autism</label><br>
+
+                    <label for="disability6"><input class="checkbox" type="checkbox" id="disability6" name="disability6" value="OCD"> OCD</label><br>
+                </div>
+                <div>
+                    <label class="title">Skills</label>
+
+                    <label for="skill1"><input class="checkbox" type="checkbox" id="skill1" name="skill1" value="Problem-solving"> Problem-solving</label><br>
+
+                    <label for="skill2"><input class="checkbox" type="checkbox" id="skill2" name="skill2" value="IT"> IT skills</label><br>
+
+                    <label for="skill3"><input class="checkbox" type="checkbox" id="skill3" name="skill3" value="Time management"> Time management</label><br>
+
+                    <label for="skill4"><input class="checkbox" type="checkbox" id="skill4" name="skill4" value="Communication"> Communication</label><br>
+
+                    <label for="skill5"><input class="checkbox" type="checkbox" id="skill5" name="skill5" value="Teamwork"> Teamwork</label><br>
+
+                    <label for="skill6"><input class="checkbox" type="checkbox" id="skill6" name="skill6" value="Project Management"> Project Management</label><br>
+
+                    <label for="skill7"><input class="checkbox" type="checkbox" id="skill7" name="skill7" value="Organisation"> Organisation</label><br>
+
+                    <label for="skill8"><input class="checkbox" type="checkbox" id="skill8" name="skill8" value="Creativity"> Creativity</label><br>
+
+                    <label for="skill9"><input class="checkbox" type="checkbox" id="skill9" name="skill9" value="Leadership"> Leadership</label><br>
+
+                    <label for="skill10"><input class="checkbox" type="checkbox" id="skill10" name="skill10" value="Organisation"> Organisation</label><br>
+                </div>
+                <div class="element">
+                    <input placeholder="Location" type="text"  th:field="*{location}"   >
+                </div>
+                <div>
+                    <label class="title">Language</label>
+
+                    <label for="language1"><input class="checkbox" type="checkbox" id="language1" name="language1" value="English"> English</label><br>
+
+                    <label for="language2"><input class="checkbox" type="checkbox" id="language2" name="language2" value="Spanish"> Spanish</label><br>
+
+                    <label for="language3"><input class="checkbox" type="checkbox" id="language3" name="language3" value="Cantonese"> Cantonese</label><br>
+                </div>
+            </div>
 
             <div  class="form" >
                 <div class="page">
-                    <label >Test</label>
-                    <div class="element">
-                        <input type="text" placeholder="Email" >
-                        <input type="text" placeholder="Email" >
+                    <label class="title">Mentee</label>
+                    <div>
+                        <label class="title">Preferred Language</label>
 
+                        <label for="language1"><input class="checkbox" type="checkbox" id="language1" name="language1" value="English"> English</label><br>
+
+                        <label for="language2"><input class="checkbox" type="checkbox" id="language2" name="language2" value="Spanish"> Spanish</label><br>
+
+                        <label for="language3"><input class="checkbox" type="checkbox" id="language3" name="language3" value="Cantonese"> Cantonese</label><br>
                     </div>
                     <div class="element">
-                        <input type="password" placeholder="Password">
-                    </div>
+                        <label class="title" for="gender">Preferred Mentor Gender</label>
 
+                        <select name="mentorGender" id="mentorGender">
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="title">Strengths</label>
+
+                        <label for="Strength1"><input class="checkbox" type="checkbox" id="Strength1" name="Strength1" value="Problem-solving"> Problem-solving</label><br>
+
+                        <label for="Strength2"><input class="checkbox" type="checkbox" id="Strength2" name="Strength2" value="IT"> IT skills</label><br>
+
+                        <label for="Strength3"><input class="checkbox" type="checkbox" id="Strength3" name="Strength3" value="Time management"> Time management</label><br>
+
+                        <label for="Strength4"><input class="checkbox" type="checkbox" id="Strength4" name="Strength4" value="Communication"> Communication</label><br>
+
+                        <label for="Strength5"><input class="checkbox" type="checkbox" id="Strength5" name="Strength5" value="Teamwork"> Teamwork</label><br>
+
+                        <label for="Strength6"><input class="checkbox" type="checkbox" id="Strength6" name="Strength6" value="Project Management"> Project Management</label><br>
+
+                        <label for="Strength7"><input class="checkbox" type="checkbox" id="Strength7" name="Strength7" value="Organisation"> Organisation</label><br>
+
+                        <label for="Strength8"><input class="checkbox" type="checkbox" id="Strength8" name="Strength8" value="Creativity"> Creativity</label><br>
+
+                        <label for="Strength9"><input class="checkbox" type="checkbox" id="Strength9" name="Strength9" value="Leadership"> Leadership</label><br>
+
+                        <label for="Strength10"><input class="checkbox" type="checkbox" id="Strength10" name="Strength10" value="Organisation"> Organisation</label><br>
+                    </div>
+                    <div>
+                        <label class="title">Weaknesses</label>
+
+                        <label for="Weakness1"><input class="checkbox" type="checkbox" id="Weakness1" name="Weakness1" value="Problem-solving"> Problem-solving</label><br>
+
+                        <label for="Weakness2"><input class="checkbox" type="checkbox" id="Weakness2" name="Weakness2" value="IT"> IT skills</label><br>
+
+                        <label for="Weakness3"><input class="checkbox" type="checkbox" id="Weakness3" name="Weakness3" value="Time management"> Time management</label><br>
+
+                        <label for="Weakness4"><input class="checkbox" type="checkbox" id="Weakness4" name="Weakness4" value="Communication"> Communication</label><br>
+
+                        <label for="Weakness5"><input class="checkbox" type="checkbox" id="Weakness5" name="Weakness5" value="Teamwork"> Teamwork</label><br>
+
+                        <label for="Weakness6"><input class="checkbox" type="checkbox" id="Weakness6" name="Weakness6" value="Project Management"> Project Management</label><br>
+
+                        <label for="Weakness7"><input class="checkbox" type="checkbox" id="Weakness7" name="Weakness7" value="Organisation"> Organisation</label><br>
+
+                        <label for="Weakness8"><input class="checkbox" type="checkbox" id="Weakness8" name="Weakness8" value="Creativity"> Creativity</label><br>
+
+                        <label for="Weakness9"><input class="checkbox" type="checkbox" id="Weakness9" name="Weakness9" value="Leadership"> Leadership</label><br>
+
+                        <label for="Weakness10"><input class="checkbox" type="checkbox" id="Weakness10" name="Weakness10" value="Organisation"> Organisation</label><br>
+                    </div>
                 </div>
 
                 <div class="page">
-                    <label >Mentor</label>
-                    <div class="element">
-                        <input type="text" placeholder="Email" >
+                    <label class="title">Mentor</label>
+                    <div>
+                        <label class="title">Preferred Language</label>
+                        <input type="radio" id="english" name="preferred_language" value="english">
+                        <label for="english">English</label><br>
+                        <input type="radio" id="Spanish" name="preferred_language" value="Spanish">
+                        <label for="Spanish">Spanish</label><br>
+                        <input type="radio" id="Cantonese" name="preferred_language" value="Cantonese">
+                        <label for="Cantonese">Cantonese</label><br>
                     </div>
                     <div class="element">
-                        <input type="password" placeholder="Password">
+                        <label class="title" for="gender">Preferred Mentee Gender</label>
+
+                        <select name="menteeGender" id="menteeGender">
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Other">Other</option>
+                        </select>
                     </div>
-                    <div class="element">
-                        <input type="password" placeholder="Password">
-                    </div>
-                    <div class="element">
-                        <input type="password" placeholder="Password">
-                    </div>
+                    <input type="number" placeholder="Preferred Mentee Age"></input>
 
                 </div>
 
