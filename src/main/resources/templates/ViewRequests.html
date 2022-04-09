@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>View Requests</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <link rel="stylesheet" href="../static/css/viewRequests.css" th:href="@{/css/viewRequests.css}">
+  <link rel="stylesheet" href="../static/css/navBar.css" th:href="@{/css/navBar.css}">
+
+  <link rel="stylesheet" href="../static/css/reset.css" th:href="@{/css/reset.css}">
+
+</head>
+<main>
+    
+  <header th:replace="commonComponents :: header"></header>
+  
+  <div class="title">
+    <p>Pending Requests</p>
+  </div>
+  
+  <div class="row container  " data-masonry='{"percentPosition": true }'>
+
+    <div class="card">
+      <img class="card-img-top" src="../static/image/profilePic.jpg" th:src="@{/image/profilePic.jpg}" alt="Profile Picture">
+      <div class="card-body">
+        <h5 class="card-title">Mentee Full Name</h5>
+        <p class="card-text">Current Position</p>
+        <a href="#" class="btn btn-primary">View profile</a>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="btn btn-primary" id="accept-btn">Accept</a>
+        <a href="#" class="btn btn-primary" id="reject-btn">Reject</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img class="card-img-top" src="../static/image/profilePic.jpg" th:src="@{/image/profilePic.jpg}" alt="Profile Picture">
+      <div class="card-body">
+        <h5 class="card-title">Mentee Full Name</h5>
+        <p class="card-text">Current Position</p>
+        <a href="#" class="btn btn-primary">View profile</a>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="btn btn-primary" id="accept-btn">Accept</a>
+        <a href="#" class="btn btn-primary" id="reject-btn">Reject</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img class="card-img-top" src="../static/image/profilePic.jpg" th:src="@{/image/profilePic.jpg}" alt="Profile Picture">
+      <div class="card-body">
+        <h5 class="card-title">Mentee Full Name</h5>
+        <p class="card-text">Current Position</p>
+        <a href="#" class="btn btn-primary">View profile</a>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="btn btn-primary" id="accept-btn">Accept</a>
+        <a href="#" class="btn btn-primary" id="reject-btn">Reject</a>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img class="card-img-top" src="../static/image/profilePic.jpg" th:src="@{/image/profilePic.jpg}" alt="Profile Picture">
+      <div class="card-body">
+        <h5 class="card-title">Mentee Full Name</h5>
+        <p class="card-text">Current Position</p>
+        <a href="#" class="btn btn-primary">View profile</a>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="btn btn-primary" id="accept-btn">Accept</a>
+        <a href="#" class="btn btn-primary" id="reject-btn">Reject</a>
+      </div>
+    </div>
+
+
+
+
+
+
+  </div>
+
+
+    </div>
+  </div>
+
+</main>
