@@ -4,32 +4,28 @@ import java.util.List;
 
 public class Mentee {
 
-    List<Mentor> mentors;
-    Mentor currentMentor;
-    List<Mentee> previousMentor;
+
+    private MenteeRelationship currentMentor;
+    private User user;
 
 
-    public List<Mentor> getMentors() {
-        return mentors;
+    public Mentee(User user){
+        this.user = user;
     }
 
-    public void setMentors(List<Mentor> mentors) {
-        this.mentors = mentors;
-    }
-
-    public Mentor getCurrentMentor() {
+    public MenteeRelationship getCurrentMentor() {
         return currentMentor;
     }
 
-    public void setCurrentMentor(Mentor currentMentor) {
+    public void setCurrentMentor(MenteeRelationship currentMentor) {
         this.currentMentor = currentMentor;
     }
 
-    public List<Mentee> getPreviousMentor() {
-        return previousMentor;
+    public User getUser() {
+        return user;
     }
 
-    public void setPreviousMentor(List<Mentee> previousMentor) {
-        this.previousMentor = previousMentor;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

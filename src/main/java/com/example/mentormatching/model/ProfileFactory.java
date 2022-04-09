@@ -15,20 +15,20 @@ public class ProfileFactory {
             "Preferred Mentee Gender", "Preferred Mentee Age", " Preferred Mentee Role", "Preferred Language"};
 
 
-    public Profile createDefaultProfile(User user){
-        Profile newProfile = new Profile(user);
+    public Profile createDefaultProfile(){
+        Profile newProfile = new Profile();
         for (String fieldName : defaultFieldNames){
             newProfile.addField(new Field<>(new ArrayList<>(), fieldName));
         }
         return newProfile;
     }
 
-    public Profile createMenteeProfile(User user){
-        Profile newProfile = createDefaultProfile(user);
-        return createMenteeProfile(user, newProfile);
+    public Profile createMenteeProfile(){
+        Profile newProfile = createDefaultProfile();
+        return createMenteeProfile( newProfile);
     }
 
-    public Profile createMenteeProfile(User user, Profile profile){
+    public Profile createMenteeProfile( Profile profile){
         for (String fieldName : menteeFieldNames){
             profile.addField(new Field<>(fieldName, new ArrayList<>(),
                     FieldTypeState.MenteeField,  FieldPrivacyState.All));
@@ -36,7 +36,7 @@ public class ProfileFactory {
         return profile;
     }
 
-    public Profile createMentorProfile(User user, Profile profile){
+    public Profile createMentorProfile(Profile profile){
         for (String fieldName : mentorFieldNames){
             profile.addField(new Field<>(fieldName, new ArrayList<>(),
                     FieldTypeState.MentorField,  FieldPrivacyState.All));
@@ -44,9 +44,9 @@ public class ProfileFactory {
         return profile;
     }
 
-    public Profile createMentorProfile(User user){
-        Profile newProfile = createDefaultProfile(user);
-        return createMentorProfile(user, newProfile);
+    public Profile createMentorProfile(){
+        Profile newProfile = createDefaultProfile();
+        return createMentorProfile( newProfile);
     }
 
 }

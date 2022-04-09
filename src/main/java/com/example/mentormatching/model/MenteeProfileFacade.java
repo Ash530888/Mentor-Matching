@@ -10,18 +10,30 @@ public class MenteeProfileFacade extends ProfileFacade{
     String preferredMentorRole;
     String[] strengths;
     String[] weaknesses;
-    String[] preferredLanguage;
+//    String[] preferredLanguage;
+    String preferredLanguage;
 
-    public MenteeProfileFacade(Profile profile){
-        super(profile);
-        this.careerGoal = profile.getField("Career Goal").getData().get(0);
-        this.preferredMentorGender = profile.getField("Preferred Mentor Gender").getData().get(0);
-        this.preferredMentorAge = profile.getField("Preferred Mentor Age").getData().get(0);
-        this.preferredMentorRole = profile.getField("Preferred Mentor Role").getData().get(0);
-        this.strengths = convertArrayList(profile.getField("Strengths").getData());
-        this.weaknesses = convertArrayList(profile.getField("Weaknesses").getData());
-        this.preferredLanguage = convertArrayList(profile.getField("Preferred Language").getData());
+//    public MenteeProfileFacade(Profile profile){
+//        super(profile);
+//        this.careerGoal = profile.getField("Career Goal").getData().get(0);
+//        this.preferredMentorGender = profile.getField("Preferred Mentor Gender").getData().get(0);
+//        this.preferredMentorAge = profile.getField("Preferred Mentor Age").getData().get(0);
+//        this.preferredMentorRole = profile.getField("Preferred Mentor Role").getData().get(0);
+//        this.strengths = convertArrayList(profile.getField("Strengths").getData());
+//        this.weaknesses = convertArrayList(profile.getField("Weaknesses").getData());
+//        this.preferredLanguage = convertArrayList(profile.getField("Preferred Language").getData());
+//    }
+
+//    public MenteeProfileFacade(Profile profile) {
+//        super(profile);
+//
+//
+//    }
+    public MenteeProfileFacade() {
+
+
     }
+
 
     public String getCareerGoal() {
         return careerGoal;
@@ -29,7 +41,7 @@ public class MenteeProfileFacade extends ProfileFacade{
 
     public void setCareerGoal(String careerGoal) {
         this.careerGoal = careerGoal;
-        profile.editField("Career Goal", careerGoal);
+//        profile.editField("Career Goal", careerGoal);
 
     }
 
@@ -39,7 +51,7 @@ public class MenteeProfileFacade extends ProfileFacade{
 
     public void setPreferredMentorGender(String preferredMentorGender) {
         this.preferredMentorGender = preferredMentorGender;
-        profile.editField("Preferred Mentor Gender", preferredMentorGender);
+//        profile.editField("Preferred Mentor Gender", preferredMentorGender);
     }
 
     public String getPreferredMentorAge() {
@@ -48,7 +60,7 @@ public class MenteeProfileFacade extends ProfileFacade{
 
     public void setPreferredMentorAge(String preferredMentorAge) {
         this.preferredMentorAge = preferredMentorAge;
-        profile.editField("Preferred Mentor Age", preferredMentorAge);
+//        profile.editField("Preferred Mentor Age", preferredMentorAge);
     }
 
     public String getPreferredMentorRole() {
@@ -57,7 +69,7 @@ public class MenteeProfileFacade extends ProfileFacade{
 
     public void setPreferredMentorRole(String preferredMentorRole) {
         this.preferredMentorRole = preferredMentorRole;
-        profile.editField("Preferred Mentor Role", preferredMentorRole);
+//        profile.editField("Preferred Mentor Role", preferredMentorRole);
     }
 
     public String[] getStrengths() {
@@ -66,7 +78,7 @@ public class MenteeProfileFacade extends ProfileFacade{
 
     public void setStrengths(String[] strengths) {
         this.strengths = strengths;
-        profile.editField("Strengths", new ArrayList<>(Arrays.asList(strengths)));
+//        profile.editField("Strengths", new ArrayList<>(Arrays.asList(strengths)));
     }
 
     public String[] getWeaknesses() {
@@ -75,15 +87,24 @@ public class MenteeProfileFacade extends ProfileFacade{
 
     public void setWeaknesses(String[] weaknesses) {
         this.weaknesses = weaknesses;
-        profile.editField("Weaknesses", new ArrayList<>(Arrays.asList(weaknesses)));
+//        profile.editField("Weaknesses", new ArrayList<>(Arrays.asList(weaknesses)));
     }
 
-    public String[] getPreferredLanguage() {
+//    public String[] getPreferredLanguage() {
+//        return preferredLanguage;
+//    }
+//
+//    public void setPreferredLanguage(String[] preferredLanguage) {
+//        this.preferredLanguage = preferredLanguage;
+////        profile.editField("Preferred Language", new ArrayList<>(Arrays.asList(preferredLanguage)));
+//    }
+
+    public String getPreferredLanguage() {
         return preferredLanguage;
     }
 
-    public void setPreferredLanguage(String[] preferredLanguage) {
+    public void setPreferredLanguage(String preferredLanguage) {
         this.preferredLanguage = preferredLanguage;
-        profile.editField("Preferred Language", new ArrayList<>(Arrays.asList(preferredLanguage)));
+//        profile.editField("Preferred Language", new ArrayList<>(Arrays.asList(preferredLanguage)));
     }
 }

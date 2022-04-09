@@ -11,22 +11,24 @@ import java.util.List;
 @Service
 public class UserDAO {
 
-    private List<User> users = Arrays.asList(
-            new User("abc@qmul.ac.uk","{noop}23", "USER", "MENTOR"),
-            new User("fatin@qmul.ac.uk","{noop}12","USER", "MENTEE")
-    );
+    private List<User> users ;
 
+    public  UserDAO(){
+        users = new ArrayList<>();
+        users.add( new User("abc@qmul.ac.uk","{noop}23", "USER", "MENTOR"));
+        users.add( new User("fatin@qmul.ac.uk","{noop}12","USER", "MENTEE"));
 
+    }
 
     public  User getUserByEmail(String username){
 
         for (User a: this.users){
             if (a.getEmail().equals(username)) return a;
         }
-
         return null;
-
     }
+
+
 
 
     public  List<User> dummyUsers(){

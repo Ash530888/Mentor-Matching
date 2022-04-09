@@ -71,7 +71,7 @@ body{
 .container .outer{
     width: 100%;
     margin-top: 40px;
-    text-align: center;
+    /*text-align: center;*/
     position: relative;
     overflow: hidden;
 }
@@ -85,16 +85,16 @@ body{
 }
 
 .page{
-    margin: auto;
+    /*margin: auto;*/
     width: 100%;
 }
 label{
-    display: block;
-    margin-bottom: 5px;
-    padding: 10px 15px ;
-    text-align: center;
-    letter-spacing: 2px;
-    font-size: 20px;
+    /*display: block;*/
+    /*margin-bottom: 5px;*/
+    /*padding: 10px 15px ;*/
+    /*!*text-align: center;*!*/
+    /*letter-spacing: 2px;*/
+    /*font-size: 20px;*/
 
 }
 

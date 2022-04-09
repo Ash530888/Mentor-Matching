@@ -7,13 +7,21 @@ public class Mentor {
     private List<MenteeRelationship> pendingRequest;
     private List<MenteeRelationship> connectedMentees;
 
+    private User user;
 
-    public void addMentee(MenteeRelationship mentee){
-        connectedMentees.add(mentee);
+
+    public Mentor(User user){
+        this.user = user;
     }
+
+
 
     public void addPendingRequest(MenteeRelationship mentee){
         pendingRequest.add(mentee);
+    }
+
+    public void addConnectedMentees(MenteeRelationship newRelationship){
+        connectedMentees.add(newRelationship);
     }
 
 

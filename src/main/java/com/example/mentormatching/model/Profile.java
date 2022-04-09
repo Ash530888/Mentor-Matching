@@ -1,6 +1,3 @@
-    /*
-     * @author Leena Neyazi ec20300@qmul.ac.uk | 200201188
-     */
 
     package com.example.mentormatching.model;
 
@@ -17,8 +14,8 @@
          * @param  User  profileUser
          * @return null
          */
-        public Profile(User profileUser){
-            this.profileUser = profileUser;
+        public Profile(){
+            this.fields = new ArrayList<Field<ArrayList<String>>>();
         }
 
         public User getProfileUser(){
