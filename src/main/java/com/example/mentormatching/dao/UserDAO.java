@@ -12,11 +12,15 @@ import java.util.List;
 public class UserDAO {
 
     private List<User> users ;
+    private List<User> mentor;
+    private List<User> mentee;
 
     public  UserDAO(){
         users = new ArrayList<>();
-        users.add( new User("abc@qmul.ac.uk","{noop}23", "USER", "MENTOR"));
-        users.add( new User("fatin@qmul.ac.uk","{noop}12","USER", "MENTEE"));
+        mentor = new ArrayList<>();
+        mentee = new ArrayList<>();
+//        users.add( new User("abc@qmul.ac.uk","{noop}23", "USER", "MENTEE"));
+//        users.add( new User("fatin@qmul.ac.uk","{noop}12","USER", "MENTEE"));
 
     }
 
@@ -29,8 +33,6 @@ public class UserDAO {
     }
 
 
-
-
     public  List<User> dummyUsers(){
         return this.users;
     }
@@ -38,14 +40,14 @@ public class UserDAO {
 
 
     public void save(User a){
+
+        if (a.getRoleStatus().equals("MENTOR")){ mentor.add(a); }
+        else if (a.getRoleStatus().equals("MENTEE"))  mentee.add(a);
         users.add(a);
     }
 
     public void update(User p, User c){
-        System.out.println(p.getEmail());
-        System.out.println(p.getPassword());
-        System.out.println(c.getEmail());
-        System.out.println(c.getPassword());
+
         User found = getUserByEmail(p.getEmail());
         found.setPassword(c.getPassword());
         found.setEmail(c.getEmail());

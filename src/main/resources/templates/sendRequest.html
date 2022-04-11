@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="../static/css/navBar.css" th:href="@{/css/navBar.css}">
   <link rel="stylesheet" href="../static/css/reset.css" th:href="@{/css/reset.css}">
 
+  <link rel="stylesheet" href="../static/css/viewRequests.css" th:href="@{/css/viewRequests.css}">
+
 
 </head>
 <body>
@@ -26,13 +28,49 @@
 <div class="container text-center">
   <h1>dsfeds</h1>
 
-  <div class="searchContainer">
-    <div class="input-group md-form form-sm form-2 pl-0">
-      <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
-      <button type="button" class="btn btn-outline-primary">search</button>
+  <div class="searchContainer ">
+      <form  th:action="@{/getMentor}">
+        <div class="input-group md-form form-sm form-2 pl-0">
+              <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search" name="name">
+              <button type="submit" class="btn btn-outline-primary">search</button>
+
+        </div>
+      </form>
+    <h2 th:if="${notFound != null}" th:text="${notFound}">Not Found</h2>
+
+    <div th:unless="${notFound != null}" class="row container mt-4  " data-masonry='{"percentPosition": true }'>
+
+
+      <div class="card" th:each="mentor: ${mentors}">
+        <img class="card-img-top" src="../static/image/profilePic.jpg" th:src="@{/image/profilePic.jpg}" alt="Profile Picture">
+        <div class="card-body">
+          <h5 class="card-title" th:text="${mentor.getTestProfile().name}">Mentee Full Name</h5>
+          <p class="card-text">Current Position</p>
+          <a href="#" class="btn btn-primary">View profile</a>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
+        </ul>
+        <div class="card-body">
+            <a  class="btn btn-primary" id="accept-btn " th:href="@{'/request?requestEmail=' + ${mentor.email}}"    >Send Request</a>
+        </div>
+      </div>
+
+
+
+
 
     </div>
+
+
+
+
+
+
+
   </div>
+
+</div>
 
 
 

@@ -44,7 +44,6 @@ public class LoginController {
             model.addAttribute("update",true);
         }
         else {
-            String skills = null;
             model.addAttribute("user",new User());
             model.addAttribute("update",false);
         }
@@ -61,8 +60,10 @@ public class LoginController {
             userService.update(previousDetail.getUser(), user);
         }
         else{
-            if (user.getUserRole() == "MENTOR") user.setMentorStatus();
+            System.out.println(user.getUserRole());
+            if (user.getUserRole().equals("MENTOR") ) user.setMentorStatus();
             else user.setMenteeStatus();
+            System.out.println(user.getTestProfile().getName());
             userService.save(user);
         }
 

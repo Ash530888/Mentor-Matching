@@ -10,14 +10,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class MentorService {
+public class MenteeService {
+
 
     @Autowired
     UserDAO repo;
 
 
     // note does not check being same person yet
-    public List<User > getMentor(){
+    public List<User> getMentor(){
 
         List<User> allUser = repo.dummyUsers();
         List<User> mentor = new ArrayList<>();
@@ -36,17 +37,10 @@ public class MentorService {
         List<User> returnMatch = new ArrayList<>();
 
         for( User user : getMentor()){
+            System.out.println(user.getTestProfile().getName());
             if (user.getTestProfile().getName().equals(name)) returnMatch.add(user);
         }
         return returnMatch;
 
-    }
-
-    public User getMentorByEmail(String email){
-
-        for( User user : getMentor()){
-            if (user.getEmail().equals(email)) return user;
-        }
-        return null;
     }
 }

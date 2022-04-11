@@ -5,7 +5,7 @@ import java.util.List;
 public class Mentee {
 
 
-    private MenteeRelationship currentMentor;
+    private MenteeRelationship currentMentor = new MenteeRelationship();
     private User user;
 
 
@@ -28,4 +28,15 @@ public class Mentee {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public void createRelation(){
+        this.currentMentor = new MenteeRelationship();
+    }
+
+
+    public void rejected(){
+        this.currentMentor = null;
+    }
+
+
 }

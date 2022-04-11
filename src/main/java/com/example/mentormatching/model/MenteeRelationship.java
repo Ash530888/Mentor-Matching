@@ -10,7 +10,8 @@ public class MenteeRelationship {
     Mentee mentee;
     String requestMessage;
 
-    List<Message> messages = new LinkedList<>();
+    private boolean connected = false;
+
 
 
     public String getCreationDate() {
@@ -45,11 +46,12 @@ public class MenteeRelationship {
         this.requestMessage = requestMessage;
     }
 
-    public void addMessage(Message msg){
-        messages.add(msg);
+
+    public void requestMentee(Mentee mentee){
+        setMentee(mentee);
+        // below date
+
     }
 
-    public List<Message> getMessages(){
-        return this.messages;
-    }
+
 }

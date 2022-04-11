@@ -21,23 +21,21 @@ public class ProfileFacade {
     String languages;
 
 
-//    public ProfileFacade(Profile profile){
-//        this.profile = new ProfileFactory().createDefaultProfile();
-//        this.name = profile.getField("Name").getData().get(0);
-//        this.location = profile.getField("Location").getData().get(0);
-//        this.age = profile.getField("Age").getData().get(0);
-//        this.jobPosition = profile.getField("Job Position").getData().get(0);
-//        this.gender = profile.getField("Gender").getData().get(0);
-//        this.fieldOfWork = profile.getField("Field of Work").getData().get(0);
-//        this.description = profile.getField("Description").getData().get(0);
+    public ProfileFacade(Profile profile){
+        this.profile = new ProfileFactory().createDefaultProfile();
+        this.name = profile.getField("Name").getData().get(0);
+        this.location = profile.getField("Location").getData().get(0);
+        this.age = profile.getField("Age").getData().get(0);
+        this.jobPosition = profile.getField("Job Position").getData().get(0);
+        this.gender = profile.getField("Gender").getData().get(0);
+        this.fieldOfWork = profile.getField("Field of Work").getData().get(0);
+        this.description = profile.getField("Description").getData().get(0);
 //        this.disabilities = convertArrayList(profile.getField("Disabilities").getData());
 //        this.skills = convertArrayList(profile.getField("Skills").getData());
 //        this.pastJobs = convertArrayList(profile.getField("Past Jobs").getData());
 //        this.languages = convertArrayList(profile.getField("Languages").getData());
-//    }
-//    public ProfileFacade(Profile profile){
-//        this.profile = profile;
-//    }
+    }
+
 
     public ProfileFacade(){
     }
@@ -167,6 +165,8 @@ public class ProfileFacade {
 //        profile.editField("Languages", new ArrayList<>(Arrays.asList(languages)));
 
     }
+
+
 
 
 }

@@ -71,13 +71,13 @@
                     <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"  sec:authorize="hasRole('ROLE_MENTEE')">Send Request</a>
+                    <a class="nav-link" href="#" th:href="@{/send}"  sec:authorize="hasRole('ROLE_MENTEE')">Send Request</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"  sec:authorize="hasRole('ROLE_MENTOR')">View Request</a>
+                    <a class="nav-link" href="#"  th:href="@{/view}" sec:authorize="hasRole('ROLE_MENTOR')">View Request</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Message</a>
+                    <a class="nav-link" href="#" th:href="@{/chat}">Message</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-bs-toggle="dropdown" aria-expanded="false">

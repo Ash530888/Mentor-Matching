@@ -12,8 +12,5 @@ public class HomeController {
     }
 
 
-    @GetMapping("/view")
-    public String test(){
-        return "ViewRequests";
-    }
+
 }

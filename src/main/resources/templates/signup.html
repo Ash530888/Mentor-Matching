@@ -27,7 +27,7 @@
         <input type="hidden" th:field="*{userRole}" id="userRole" />
 
         <div th:if="${update == false}" class="switch"  >
-            <div class="MenteeSignUp"  onclick="document.getElementById('userRole').value = 'MENTEE'; tab1(); onlo">Mentee</div>
+            <div class="MenteeSignUp"  onclick="document.getElementById('userRole').value = 'MENTEE'; tab1();  ">Mentee</div>
             <div class="MentorSignUp" onclick="document.getElementById('userRole').value = 'MENTOR'; tab2()">Mentor</div>
         </div>
         <div th:unless="${update == false}"  >
@@ -61,15 +61,15 @@
 
                 <div class="row mt-2">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Full name" th:field="*{menteeProfileFacade.name}">
+                        <input id="name" type="text" class="form-control" placeholder="Full name"  th:field="*{testProfile.name}" >
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Age" th:field="*{menteeProfileFacade.age}">
+                        <input type="text" class="form-control" placeholder="Age" th:field="*{testProfile.age}">
                     </div>
                 </div>
                 <div class="form-group mt-2" >
                     <label for="exampleFormControlSelect1">Gender</label>
-                    <select class="form-control" id="exampleFormControlSelect1" th:field="*{menteeProfileFacade.gender}">
+                    <select class="form-control" id="exampleFormControlSelect1" th:field="*{testProfile.gender}">
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                         <option value="Other">Other</option>
@@ -77,28 +77,28 @@
                 </div>
                 <div class="row mt-2">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Filed of Work" th:field="*{menteeProfileFacade.fieldOfWork}">
+                        <input type="text" class="form-control" placeholder="Filed of Work" th:field="*{testProfile.fieldOfWork}">
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Job Position" th:field="*{menteeProfileFacade.jobPosition}">
+                        <input type="text" class="form-control" placeholder="Job Position" th:field="*{testProfile.jobPosition}">
                     </div>
                 </div>
                 <div class="form-group mt-2">
-                    <input  class="form-control" placeholder="Location" th:field="*{menteeProfileFacade.location}" >
+                    <input  class="form-control" placeholder="Location" th:field="*{testProfile.location}" >
                 </div>
 
                 <div class="form-group mt-2">
                     <label for="exampleFormControlTextarea1">Description</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" th:field="*{menteeProfileFacade.description}"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" th:field="*{testProfile.description}"></textarea>
                 </div>
                 <div class="form-group mt-2">
-                    <input  class="form-control" placeholder="Any Disability" th:field="*{menteeProfileFacade.disabilities}" >
+                    <input  class="form-control" placeholder="Any Disability" th:field="*{testProfile.disabilities}" >
                 </div>
                 <div class="form-group mt-2">
                     <label for="exampleFormControlTextarea1">Skills(each skills separated by space)</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" th:field="*{menteeProfileFacade.skills}"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" th:field="*{testProfile.skills}"></textarea>
                 </div>
-                <div class="form-group mt-2" th:field="*{menteeProfileFacade.languages}">
+                <div class="form-group mt-2" th:field="*{testProfile.languages}">
                     <input  class="form-control" placeholder="Language" >
                 </div>
 
@@ -112,23 +112,23 @@
                     <label >Mentee</label>
                     <div class="form-group mt-2">
                         <label for="exampleFormControlTextarea1">Career Goal</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" th:field="*{menteeProfileFacade.careerGoal}"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ></textarea>
                     </div>
 
                     <div class="row mt-2">
                         <div class="col">
-                            <select class="form-control" id="exampleFormControlSelect1" th:field="*{menteeProfileFacade.preferredMentorGender}" >
+                            <select class="form-control" id="exampleFormControlSelect1"  >
                                 <option value="" disabled selected>Prefer Mentor Gender</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                             </select>
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Prefer Mentor Field Of Work" th:field="*{menteeProfileFacade.preferredMentorRole}">
+                            <input type="text" class="form-control" placeholder="Prefer Mentor Field Of Work" >
                         </div>
                     </div>
                     <div class="form-group mt-2">
-                        <input  class="form-control" placeholder="Prefer Mentor Language" th:field="*{menteeProfileFacade.preferredLanguage}">
+                        <input  class="form-control" placeholder="Prefer Mentor Language" >
                     </div>
                 </div>
 
@@ -194,8 +194,12 @@
     const form = document.querySelector(".form");
     const switches = document.querySelectorAll(".switch");
 
+    const input = document.querySelector(".name");
+
+
     let current = 1;
     function tab2(){
+
         form.style.marginLeft = "-100%";
         loginMentor.style.background = "none";
         loginMentee.style.background = "linear-gradient(45deg,#00d5fc,#056af6)";
@@ -204,6 +208,7 @@
     }
 
     function tab1(){
+
         form.style.marginLeft = "0";
         loginMentee.style.background = "none";
         loginMentor.style.background = "linear-gradient(45deg,#00d5fc,#056af6)";
@@ -211,6 +216,8 @@
 
 
     }
+
+
 
 </script>
 
