@@ -69,30 +69,30 @@
 
         <div class="chatWindow" th:if="${Me}">
 
-          <div th:if="${relation != null}" class="chat">
-            <div  class="message incoming" th:each="message: ${relation.getMessages()}">
-              <h5 th:value="${message.who}">Jarvis</h5>
-              <p th:value="${message.message}">Hello Ultron</p>
-            </div>
+<!--          <div th:if="${relation != null}" class="chat">-->
+<!--            <div  class="message incoming" th:each="message: ${relation.getMessages()}">-->
+<!--              <h5 th:value="${message.who}">Jarvis</h5>-->
+<!--              <p th:value="${message.message}">Hello Ultron</p>-->
+<!--            </div>-->
 
-            <div class="message outgoing">
-              <h5>Veronica</h5>
-              <p>Hello</p>
+<!--            <div class="message outgoing">-->
+<!--              <h5>Veronica</h5>-->
+<!--              <p>Hello</p>-->
 
-            </div>
-          </div>
+<!--            </div>-->
+<!--          </div>-->
 
-          <form action="">
-            <div th:if="${relation != null}" class="userInput">
-              <input type="text" placeholder="Type your message">
-              <button>SEND</button>
-            </div>
-          </form>
-          <div th:unless="${relation != null}">
-            sdf
-          </div>
+<!--          <form action="">-->
+<!--            <div th:if="${relation != null}" class="userInput">-->
+<!--              <input type="text" placeholder="Type your message">-->
+<!--              <button>SEND</button>-->
+<!--            </div>-->
+<!--          </form>-->
+<!--          <div th:unless="${relation != null}">-->
+<!--            sdf-->
+<!--          </div>-->
 
-        </div>
+<!--        </div>-->
 
 
       </div>
