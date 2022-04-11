@@ -9,27 +9,13 @@ public class MentorProfileFacade extends ProfileFacade{
     String preferredMenteeRole;
     String[] preferredLanguage;
 
-//    public MentorProfileFacade(){
-//        this.preferredMenteeAge = profile.getField("Preferred Mentee Age").getData().get(0);
-//        this.preferredMenteeGender = profile.getField("Preferred Mentee Gender").getData().get(0);
-//        this.preferredMenteeRole = profile.getField("Preferred Mentee Role").getData().get(0);
-//        this.preferredLanguage = convertArrayList(profile.getField("Preferred Language").getData());
-//    }
-
-    public MentorProfileFacade(){
-
+    public MentorProfileFacade(Profile profile){
+        super(profile);
+        this.preferredMenteeAge = profile.getField("Preferred Mentee Age").getData().get(0);
+        this.preferredMenteeGender = profile.getField("Preferred Mentee Gender").getData().get(0);
+        this.preferredMenteeRole = profile.getField("Preferred Mentee Role").getData().get(0);
+        this.preferredLanguage = convertArrayList(profile.getField("Preferred Language").getData());
     }
-
-
-
-//    public MentorProfileFacade(Profile profile){
-//        super(profile);
-//
-//    }
-//
-
-
-
 
 
     public String getPreferredMenteeGender() {
@@ -38,7 +24,7 @@ public class MentorProfileFacade extends ProfileFacade{
 
     public void setPreferredMenteeGender(String preferredMenteeGender) {
         this.preferredMenteeGender = preferredMenteeGender;
-//        profile.editField("Preferred Mentee Gender", preferredMenteeGender);
+        profile.editField("Preferred Mentee Gender", preferredMenteeGender);
     }
 
     public String getPreferredMenteeAge() {
@@ -47,7 +33,7 @@ public class MentorProfileFacade extends ProfileFacade{
 
     public void setPreferredMenteeAge(String preferredMenteeAge) {
         this.preferredMenteeAge = preferredMenteeAge;
-//        profile.editField("Preferred Mentor Age", preferredMenteeAge);
+        profile.editField("Preferred Mentor Age", preferredMenteeAge);
     }
 
     public String getPreferredMenteeRole() {
@@ -56,7 +42,7 @@ public class MentorProfileFacade extends ProfileFacade{
 
     public void setPreferredMenteeRole(String preferredMenteeRole) {
         this.preferredMenteeRole = preferredMenteeRole;
-//        profile.editField("Preferred Mentee Role", preferredMenteeRole);
+        profile.editField("Preferred Mentee Role", preferredMenteeRole);
     }
 
 
@@ -66,6 +52,6 @@ public class MentorProfileFacade extends ProfileFacade{
 
     public void setPreferredLanguage(String[] preferredLanguage) {
         this.preferredLanguage = preferredLanguage;
-//        profile.editField("Preferred Language", new ArrayList<>(Arrays.asList(preferredLanguage)));
+        profile.editField("Preferred Language", new ArrayList<>(Arrays.asList(preferredLanguage)));
     }
 }

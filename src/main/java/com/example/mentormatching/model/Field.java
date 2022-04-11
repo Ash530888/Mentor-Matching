@@ -38,7 +38,7 @@ public class Field<T>{
      * @param data the data payload stored in the field
      * @param name the label/name of the field
      */
-    public Field(T data, String name) {
+    public Field(String name,T data) {
         this.data = data;
         this.name = name;
         this.type = FieldTypeState.DefaultField;
@@ -62,6 +62,7 @@ public class Field<T>{
      */
     public Field(String name, T data, FieldTypeState type, FieldPrivacyState privacyState) {
         this.name = name;
+        this.data = data;
         this.type = FieldTypeState.DefaultField;
         this.privacy = privacyState;
     }
@@ -104,6 +105,11 @@ public class Field<T>{
      */
     public FieldPrivacyState getPrivacy() {
         return privacy;
+    }
+
+    @Override
+    public String toString(){
+        return "FIELD Name: " + name;
     }
 }
 enum FieldPrivacyState{
