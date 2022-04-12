@@ -38,7 +38,7 @@
       <div class="card-body">
         <h5 class="card-title" th:text="${menteeRequest.getMentee().getUser().getTestProfile().name}">Mentee Full Name</h5>
         <p class="card-text">Current Position</p>
-        <a href="#" class="btn btn-primary">View profile</a>
+        <a href="#popup1" class="btn btn-primary">View profile</a>
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
@@ -50,6 +50,32 @@
     </div>
 
 
+  </div>
+  <div id="popup1" class="overlay">
+    <div class="popup" >
+      <h2>Mentee Name</h2>
+      <a class="close" href="#popup">×</a>
+      <div class="content">
+        <p>Description:</p>
+        <p> </p>
+        <p>Skills:</p>
+        <p> </p>
+        <p>Career Goal: ...</p>
+        <p> </p>
+        <p>Preferred Mentor Gender: ...</p>
+        <p>Preferred Mentor Age: ...</p>
+        <p>Preferred Mentor Role: ...</p>
+        <p>Strengths: ...</p>
+        <p>Weaknesses: ...</p>
+        <p> </p>
+        <p>age: ...</p>
+        <p>location: ...</p>
+        <p>Job Position: ...</p>
+        <p>Gender: ...</p>
+        <p>Field Of Work: ...</p>
+        <p>Disabilities: ...</p>
+      </div>
+    </div>
   </div>
 
 
