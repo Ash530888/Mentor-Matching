@@ -81,13 +81,14 @@ img{
 }
 
 .popup {
-    margin: 70px auto;
+    margin: 30px auto;
     padding: 20px;
     background: #fff;
     border-radius: 5px;
-    width: 30%;
+    width: 80%;
     position: relative;
     transition: all 5s ease-in-out;
+    text-align: center;
 }
 
 .popup h2 {
