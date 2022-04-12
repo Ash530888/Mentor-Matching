@@ -20,8 +20,8 @@ public class UserDAO {
         mentor = new ArrayList<>();
         mentee = new ArrayList<>();
         users.add( new User("abc@qmul.ac.uk","{noop}23", "MENTOR_MANAGER", null));
-        users.add( new User("fatin@qmul.ac.uk","{noop}12","USER", "MENTEE"));
-        users.add( new User("faatin@qmul.ac.uk","{noop}12","USER", "MENTOR"));
+//        users.add( new User("fatin@qmul.ac.uk","{noop}12","USER", "MENTEE"));
+//        users.add( new User("faatin@qmul.ac.uk","{noop}12","USER", "MENTOR"));
 
 
     }

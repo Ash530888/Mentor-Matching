@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="../static/css/home.css" th:href="@{/css/home.css}">
     <link rel="stylesheet" href="../static/css/matching.css" th:href="@{/css/matching.css}">
 
+    <link rel="stylesheet" href="../static/css/viewRequests.css" th:href="@{/css/viewRequests.css}">
+
+
 </head>
 <main>
 
@@ -25,115 +28,77 @@
         <div class="title">
             <p>Mentors Awaiting Matching</p>
         </div>
-        <div class="card-deck">
-            <div class="card">
-                <img class="card-img-top" src="../static/image/profilePic.jpg" th:src="@{/img/profilePic.jpg}" alt="Profile Picture">
-                <div class="card-body">
-                    <h5 class="card-title">Mentor Full Name</h5>
-                    <p class="card-text">Current Position</p>
-                    <a href="#popup1" class="btn btn-primary">View profile</a>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
-                    <li class="list-group-item"><input type="radio" id="mentor1" name="mentor" value="mentor1"></li>
-                </ul>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="../static/image/profilePic.jpg" th:src="@{/img/profilePic.jpg}" alt="Profile Picture">
-                <div class="card-body">
-                    <h5 class="card-title">Mentor Full Name</h5>
-                    <p class="card-text">Current Position</p>
-                    <a href="#popup1" class="btn btn-primary">View profile</a>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
-                    <li class="list-group-item"><input type="radio" id="mentor2" name="mentor" value="mentor2"></li>
-                </ul>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="../static/image/profilePic.jpg" th:src="@{/img/profilePic.jpg}" alt="Profile Picture">
-                <div class="card-body">
-                    <h5 class="card-title">Mentor Full Name</h5>
-                    <p class="card-text">Current Position</p>
-                    <a href="#popup1" class="btn btn-primary">View profile</a>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
-                    <li class="list-group-item"><input type="radio" id="mentor3" name="mentor" value="mentor3"></li>
-                </ul>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="../static/image/profilePic.jpg" th:src="@{/img/profilePic.jpg}" alt="Profile Picture">
-                <div class="card-body">
-                    <h5 class="card-title">Mentor Full Name</h5>
-                    <p class="card-text">Current Position</p>
-                    <a href="#popup1" class="btn btn-primary">View profile</a>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
-                    <li class="list-group-item"><input type="radio" id="mentor4" name="mentor" value="mentor4"></li>
-                </ul>
-            </div>
-        </div>
+        <form action="">
+            <div class="row container  " data-masonry='{"percentPosition": true }'>
 
-        <div class="title">
-            <p>Mentees Awaiting Matching</p>
-        </div>
+                <div class="card" th:each="menteeRequest: ${}">
+                    <img class="card-img-top" src="../static/image/profilePic.jpg" th:src="@{/image/profilePic.jpg}" alt="Profile Picture">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${}">Mentee Full Name</h5>
+                        <p class="card-text">Current Position</p>
+                        <a href="#" class="btn btn-primary">View profile</a>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
+                    </ul>
+                    <div class="card-body">
+                        <!--        <a  class="btn btn-primary" id="accept-btn " th:href="@{'/requestAccept?requestEmail=' + ${menteeRequest.getMentee().getUser().getEmail()}}" >Accept</a>-->
+                    </div>
+                </div>
 
-        <div class="card-deck">
-            <div class="card">
-                <img class="card-img-top" src="../static/image/profilePic.jpg" th:src="@{/img/profilePic.jpg}" alt="Profile Picture">
-                <div class="card-body">
-                    <h5 class="card-title">Mentee Full Name</h5>
-                    <p class="card-text">Current Position</p>
-                    <a href="#popup1" class="btn btn-primary">View profile</a>
+                <div class="card">
+                    <img class="card-img-top" src="../static/image/profilePic.jpg" th:src="@{/img/profilePic.jpg}" alt="Profile Picture">
+                    <div class="card-body">
+                        <h5 class="card-title">Mentor Full Name</h5>
+                        <p class="card-text">Current Position</p>
+                        <a href="#popup1" class="btn btn-primary">View profile</a>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
+                        <li class="list-group-item"><input type="radio" id="mentor1" name="mentor" value="mentor1"></li>
+                    </ul>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
-                    <li class="list-group-item"><input type="radio" id="mentee1" name="mentee" value="mentee1"></li>
-                </ul>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="../static/image/profilePic.jpg" th:src="@{/img/profilePic.jpg}" alt="Profile Picture">
-                <div class="card-body">
-                    <h5 class="card-title">Mentee Full Name</h5>
-                    <p class="card-text">Current Position</p>
-                    <a href="#popup1" class="btn btn-primary">View profile</a>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
-                    <li class="list-group-item"><input type="radio" id="mentee2" name="mentee" value="mentee2"></li>
-                </ul>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="../static/image/profilePic.jpg" th:src="@{/img/profilePic.jpg}" alt="Profile Picture">
-                <div class="card-body">
-                    <h5 class="card-title">Mentee Full Name</h5>
-                    <p class="card-text">Current Position</p>
-                    <a href="#popup1" class="btn btn-primary">View profile</a>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
-                    <li class="list-group-item"><input type="radio" id="mentee3" name="mentee" value="mentee3"></li>
-                </ul>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="../static/image/profilePic.jpg" th:src="@{/img/profilePic.jpg}" alt="Profile Picture">
-                <div class="card-body">
-                    <h5 class="card-title">Mentee Full Name</h5>
-                    <p class="card-text">Current Position</p>
-                    <a href="#popup1" class="btn btn-primary">View profile</a>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
-                    <li class="list-group-item"><input type="radio" id="mentee4" name="mentee" value="mentee4"></li>
-                </ul>
-            </div>
-        </div>
 
-        <button  href="#" class="btn btn-primary" id="accept-btn" type="submit" >Suggest</button>
 
-    </form>
+
+            </div>
+
+            <div class="row container  " data-masonry='{"percentPosition": true }'>
+
+                <div class="card" th:each="menteeRequest: ${}">
+                    <img class="card-img-top" src="../static/image/profilePic.jpg" th:src="@{/image/profilePic.jpg}" alt="Profile Picture">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${}">Mentee Full Name</h5>
+                        <p class="card-text">Current Position</p>
+                        <a href="#" class="btn btn-primary">View profile</a>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
+                    </ul>
+                    <div class="card-body">
+                        <!--        <a  class="btn btn-primary" id="accept-btn " th:href="@{'/requestAccept?requestEmail=' + ${menteeRequest.getMentee().getUser().getEmail()}}" >Accept</a>-->
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="card-img-top" src="../static/image/profilePic.jpg" th:src="@{/img/profilePic.jpg}" alt="Profile Picture">
+                    <div class="card-body">
+                        <h5 class="card-title">Mentor Full Name</h5>
+                        <p class="card-text">Current Position</p>
+                        <a href="#popup1" class="btn btn-primary">View profile</a>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
+                        <li class="list-group-item"><input type="radio" id="mentor1" name="mentor" value="mentor1"></li>
+                    </ul>
+                </div>
+
+
+            </div>
+            <button  href="#" class="btn btn-primary" id="accept-btn" type="submit" >Suggest</button>
+
+        </form>
+
 
     <div id="popup1" class="overlay">
         <div class="popup" >
