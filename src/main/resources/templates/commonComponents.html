@@ -68,7 +68,13 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto ml-5">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#" sec:authorize="!hasRole('ROLE_MENTOR_MANAGER')">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" th:href="@{/suggestMatch}"  sec:authorize="hasRole('ROLE_MENTOR_MANAGER')">Suggest Match</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" th:href="@{/send}"  sec:authorize="hasRole('ROLE_MENTOR_MANAGER')">Verify Mentor</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" th:href="@{/send}"  sec:authorize="hasRole('ROLE_MENTEE')">Send Request</a>
@@ -77,9 +83,9 @@
                     <a class="nav-link" href="#"  th:href="@{/view}" sec:authorize="hasRole('ROLE_MENTOR')">View Request</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" th:href="@{/chat}">Message</a>
+                    <a class="nav-link" href="#" th:href="@{/chat}" sec:authorize="!hasRole('ROLE_MENTOR_MANAGER')">Message</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown" sec:authorize="!hasRole('ROLE_MENTOR_MANAGER')">
                     <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Mentor Name
                     </a>
@@ -87,6 +93,9 @@
                         <li><a class="dropdown-item" href="#" th:href="@{signup}">edit profile</a></li>
                         <li><a class="dropdown-item"  th:href="@{/logout}">Logout</a></li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" th:href="@{/logout}" sec:authorize="hasRole('ROLE_MENTOR_MANAGER')">Logout</a>
                 </li>
 
             </ul>

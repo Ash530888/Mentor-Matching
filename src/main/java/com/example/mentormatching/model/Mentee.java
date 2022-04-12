@@ -7,11 +7,14 @@ public class Mentee {
 
     private MenteeRelationship currentMentor = new MenteeRelationship();
     private User user;
+    private boolean connected = false;
 
 
     public Mentee(User user){
         this.user = user;
     }
+
+
 
     public MenteeRelationship getCurrentMentor() {
         return currentMentor;
@@ -38,5 +41,11 @@ public class Mentee {
         this.currentMentor = null;
     }
 
+    public boolean isConnected() {
+        return connected;
+    }
 
+    public void setConnected(boolean connected) {
+        this.connected = connected;
+    }
 }

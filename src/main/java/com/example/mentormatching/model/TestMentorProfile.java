@@ -1,6 +1,6 @@
 package com.example.mentormatching.model;
 
-public class TestMentorProfile {
+public class TestMentorProfile   {
 
     String preferredMenteeGender;
     String preferredMenteeAge;

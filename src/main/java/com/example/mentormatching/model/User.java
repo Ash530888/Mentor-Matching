@@ -16,8 +16,14 @@ public class User extends Account {
     private Mentee mentee;
     private Mentor mentor;
 
+
+    public User(){
+        mentor = new Mentor(this);
+        mentee  = new Mentee(this);
+    }
+
     public Mentee getMentee() {
-        return mentee;
+        return this.mentee;
     }
 
     public void setMentee(Mentee mentee) {
@@ -25,7 +31,7 @@ public class User extends Account {
     }
 
     public Mentor getMentor() {
-        return mentor;
+        return this.mentor;
     }
 
     public void setMentor(Mentor mentor) {
@@ -35,24 +41,33 @@ public class User extends Account {
     public String[] allRole = {"None", "None"};
 
     public User(String email, String password, String role, String userRole){
+
         super(email,password,"",  role);
 //        menteeProfileFacade = new MenteeProfileFacade();
 //        mentorProfileFacade = new MentorProfileFacade();
-        this.testMenteeProfile = new TestMenteeProfile();
-        this.testMentorProfile = new TestMentorProfile();
+//        this.testMenteeProfile = new TestMenteeProfile();
+//        this.testMentorProfile = new TestMentorProfile();
+
         this.testProfile = new TestProfile();
         this.userRole = userRole;
+        if (userRole != null){
+            if (this.userRole.equals("MENTOR")) setMentorStatus();
+            else setMenteeStatus();
+        }
 
-    }
-    public User(){
         mentor = new Mentor(this);
         mentee  = new Mentee(this);
+
+
+
     }
+
 
     public String getRoleStatus(){
         if (allRole[0] == "MENTOR" && allRole[1] == "MENTEE") return "BOTH";
         else if (allRole[0] == "MENTOR") return "MENTOR";
-        else return "MENTEE";
+        else if (allRole[1] == "MENTEE") return "MENTEE";
+        else return  "NULL";
     }
     public void setMentorStatus(){this.allRole[0] = "MENTOR";}
     public void setMenteeStatus(){this.allRole[1] = "MENTEE";}

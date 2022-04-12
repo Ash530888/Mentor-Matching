@@ -31,6 +31,35 @@ public class MenteeService {
         return mentor;
 
     }
+    public List<User> getMentee(){
+
+        List<User> allUser = repo.dummyUsers();
+        List<User> mentee = new ArrayList<>();
+
+        for( User user : allUser){
+            if (user.getRoleStatus() == "BOTH" || user.getRoleStatus() == "MENTEE"){
+                mentee.add(user);
+            }
+        }
+
+        return mentee;
+
+    }
+
+
+
+    public List<User> getNonConnectedMentees(){
+        List<User> mentees = getMentee();
+        List<User> menteeNotConnected = new ArrayList<>();
+
+        for (User mentee : mentees){
+            if(mentee.getMentee().isConnected() == false) menteeNotConnected.add(mentee);
+        }
+        return menteeNotConnected;
+
+    }
+
+
 
     public List<User> getMentorByName(String name){
 

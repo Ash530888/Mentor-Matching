@@ -52,6 +52,7 @@ public class MenteeRelationshipController {
         User mentor = userDetail.getUser();
         MenteeRelationship acceptedRelation = mentor.getMentor().removeMenteeFromPending(menteeEmail);
         acceptedRelation.setMentor(mentor.getMentor());
+        acceptedRelation.getMentee().setConnected(true);
         mentor.getMentor().addConnectedMentees(acceptedRelation);
 
 
