@@ -4,6 +4,7 @@ package com.example.mentormatching.controller;
 import com.example.mentormatching.model.User;
 import com.example.mentormatching.security.UserDetail;
 import com.example.mentormatching.service.MentorService;
+import com.example.mentormatching.service.MentorSuggestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,9 @@ public class MenteeController {
     @Autowired
     MentorService mentorService;
 
+    @Autowired
+    MentorSuggestService mentorSuggestService;
+
 
 
 
@@ -28,6 +32,14 @@ public class MenteeController {
     public String getSend(Model model, RedirectAttributes redirectAttributes,Authentication authentication){
         UserDetail userDetail = (UserDetail) authentication.getPrincipal();
         User loggedInMentee = userDetail.getUser();
+
+        List<User> mentors = mentorSuggestService.sortMentors(mentorService.getMentor(),loggedInMentee);
+
+
+        for(int x =0; x<3 && x<mentors.size() ; x++)loggedInMentee.getMentee().addSuggestedMentor(mentors.get(x).getMentor());
+
+        System.out.println(loggedInMentee.getMentee().getSuggestedMentor().size());
+
         model.addAttribute("suggestedMentor",loggedInMentee.getMentee().getSuggestedMentor());
 
         return "sendRequest";
