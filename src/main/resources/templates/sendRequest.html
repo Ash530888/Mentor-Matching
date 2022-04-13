@@ -26,7 +26,7 @@
 <header th:replace="commonComponents :: header"></header>
 
 <div class="container text-center">
-  <h1>dsfeds</h1>
+  <h1>Send Request</h1>
 
   <div class="searchContainer ">
       <form  th:action="@{/getMentor}">
@@ -69,11 +69,11 @@
         <img class="card-img-top" src="../static/image/profilePic.jpg" th:src="@{/image/profilePic.jpg}" alt="Profile Picture">
         <div class="card-body">
           <h5 class="card-title" th:text="${mentorS.getUser().getTestProfile().name}">Mentee Full Name</h5>
-          <p class="card-text">Current Position</p>
+          <p class="card-text" th:text="${mentorS.getUser().getTestProfile().jobPosition}">Current Position</p>
           <a href="#popup1" class="btn btn-primary">View profile</a>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
+          <li class="list-group-item" th:text="${mentorS.getUser().getTestProfile().description}">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
         </ul>
         <div class="card-body">
           <a  class="btn btn-primary" id="accept-btn " th:href="@{'/request?requestEmail=' + ${mentorS.getUser().email}}"    >Send Request</a>

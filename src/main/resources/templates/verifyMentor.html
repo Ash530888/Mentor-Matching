@@ -51,11 +51,11 @@
         <img class="card-img-top" src="../static/image/profilePic.jpg" th:src="@{/image/profilePic.jpg}" alt="Profile Picture">
         <div class="card-body">
           <h5 class="card-title" th:text="${unverifiedMentor.get(i).getTestProfile().name}">Mentor Full Name</h5>
-          <p class="card-text">Current Position</p>
+          <p class="card-text" th:text="${unverifiedMentor.get(i).getTestProfile().jobPosition}">Current Position</p>
           <a href="#popup1" class="btn btn-primary">View profile</a>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
+          <li class="list-group-item" th:text="${unverifiedMentor.get(i).getTestProfile().description}">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
           <li class="list-group-item"><input type="checkbox" id="mentor1" name="mentor" th:value="${unverifiedMentor.get(i).email}" th:field="*{unverifiedMentorSelected.unverifiedMentorSelected[__${i}__]}"></li>
 
         </ul>
