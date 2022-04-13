@@ -1,6 +1,8 @@
 package com.example.mentormatching.controller;
 
 
+import com.example.mentormatching.model.Mentee;
+import com.example.mentormatching.model.User;
 import com.example.mentormatching.service.MenteeService;
 import com.example.mentormatching.service.MentorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +42,19 @@ class  MentorSelected{
     }
 }
 
+class unverifiedMentorSelected{
+
+    public String[] unverifiedMentorSelected = {"","",""};
+
+    public String[] getUnverifiedMentorSelected() {
+        return unverifiedMentorSelected;
+    }
+
+    public void setUnverifiedMentorSelected(String[] unverifiedMentorSelected) {
+        this.unverifiedMentorSelected = unverifiedMentorSelected;
+    }
+}
+
 @Controller
 public class AdminController {
 
@@ -63,10 +78,38 @@ public class AdminController {
 
     @PostMapping("/processSuggestMatch")
     public String processSuggestMatch(@ModelAttribute MenteeSelected menteeSelected,@ModelAttribute MentorSelected mentorSelected  ,RedirectAttributes redirectAttributes){
-        System.out.println(mentorSelected.mentor);
-        for (String a: menteeSelected.menteeSelected){
-            System.out.println(a);
+        User mentor =mentorService.getMentorByEmail(mentorSelected.mentor);
+        for (String email: menteeSelected.menteeSelected){
+            if (email != null) {
+                if (!email.equals("")) {
+                    User mentee = menteeService.getMenteeByEmail(email);
+                    mentee.getMentee().addSuggestedMentor(mentor.getMentor());
+                }
+            }
         }
         return "home";
+    }
+
+    @GetMapping("/verifyMentor")
+    public String getVerificationPage(Model model){
+        model.addAttribute("unverifiedMentor", mentorService.getUnverifiedMentor());
+        model.addAttribute("unverifiedMentorSelected", new unverifiedMentorSelected());
+        return "verifyMentor";
+    }
+
+    @PostMapping("/processVerify")
+    public String verifyMentor(@ModelAttribute unverifiedMentorSelected unverifiedMentorSelected  ,RedirectAttributes redirectAttributes){
+        for (String email: unverifiedMentorSelected.unverifiedMentorSelected){
+            if (email != null){
+                if (!email.equals("")){
+                    User mentor = mentorService.getUnverifiedMentorByEmail(email);
+                    mentor.getMentor().verifyMentor(true);
+                }
+
+            }
+
+        }
+        return "redirect:/verifyMentor";
+
     }
 }

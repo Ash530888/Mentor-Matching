@@ -47,6 +47,15 @@ public class MenteeService {
     }
 
 
+    public User getMenteeByEmail(String email){
+        for( User user : getNonConnectedMentees()){
+
+            if (user.getEmail().equals(email)) return user;
+        }
+        return null;
+    }
+
+
 
     public List<User> getNonConnectedMentees(){
         List<User> mentees = getMentee();

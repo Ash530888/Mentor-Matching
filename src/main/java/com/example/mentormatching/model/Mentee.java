@@ -1,5 +1,6 @@
 package com.example.mentormatching.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Mentee {
@@ -8,6 +9,7 @@ public class Mentee {
     private MenteeRelationship currentMentor = new MenteeRelationship();
     private User user;
     private boolean connected = false;
+    private List<Mentor> suggestedMentor = new ArrayList<>();
 
 
     public Mentee(User user){
@@ -48,4 +50,15 @@ public class Mentee {
     public void setConnected(boolean connected) {
         this.connected = connected;
     }
+
+    public List<Mentor> getSuggestedMentor() {
+        return suggestedMentor;
+    }
+
+    public void setSuggestedMentor(List<Mentor> suggestedMentor) {
+        this.suggestedMentor = suggestedMentor;
+    }
+
+    public void addSuggestedMentor(Mentor mentor){ this.suggestedMentor.add(mentor);}
+
 }

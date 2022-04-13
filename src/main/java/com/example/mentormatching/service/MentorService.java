@@ -23,8 +23,8 @@ public class MentorService {
         List<User> mentor = new ArrayList<>();
 
         for( User user : allUser){
-            if (user.getRoleStatus() == "BOTH" || user.getRoleStatus() == "MENTOR") mentor.add(user);
-
+            if (user.getRoleStatus().equals("BOTH") || user.getRoleStatus().equals("MENTOR"))
+                if(user.getMentor().isVerified() == true) mentor.add(user);
         }
 
         return mentor;
@@ -45,6 +45,23 @@ public class MentorService {
     public User getMentorByEmail(String email){
 
         for( User user : getMentor()){
+            if (user.getEmail().equals(email)) return user;
+        }
+        return null;
+    }
+
+    public List<User> getUnverifiedMentor(){
+        List<User> allUser = repo.dummyUsers();
+        List<User> unverifiedMentor = new ArrayList<>();
+        for( User user : allUser){
+            if (user.getRoleStatus().equals("BOTH") || user.getRoleStatus().equals("MENTOR"))
+                if(user.getMentor().isVerified() == false) unverifiedMentor.add(user);
+        }
+        return unverifiedMentor;
+    }
+    public User getUnverifiedMentorByEmail(String email){
+
+        for( User user : getUnverifiedMentor()){
             if (user.getEmail().equals(email)) return user;
         }
         return null;

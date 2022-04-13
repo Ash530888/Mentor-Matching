@@ -1,5 +1,7 @@
 package com.example.mentormatching.model;
 
+import com.example.mentormatching.security.UserDetail;
+
 public class User extends Account {
 
 
@@ -17,9 +19,11 @@ public class User extends Account {
     private Mentor mentor;
 
 
+
     public User(){
         mentor = new Mentor(this);
         mentee  = new Mentee(this);
+
     }
 
     public Mentee getMentee() {
@@ -104,6 +108,8 @@ public class User extends Account {
     public void setTestMentorProfile(TestMentorProfile testMentorProfile) {
         this.testMentorProfile = testMentorProfile;
     }
+
+
 
     //    public MentorProfileFacade getMentorProfileFacade() {
 //        return mentorProfileFacade;

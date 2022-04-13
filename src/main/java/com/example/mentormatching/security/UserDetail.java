@@ -59,8 +59,14 @@ public class UserDetail implements UserDetails {
 
     @Override
     public boolean isEnabled() {
+
+        if(this.user.getRole().equals("MENTOR_MANAGER")) return true;
+        if (this.user.getUserRole().equals("MENTOR") && this.user.getMentor().isVerified() == false)return false;
+
         return true;
     }
+
+
 
     public User getUser() {
         return user;

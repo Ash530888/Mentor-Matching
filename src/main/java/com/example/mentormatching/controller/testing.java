@@ -14,14 +14,10 @@ public class testing {
     @Autowired
     userService userService;
 
-    @GetMapping("/")
-    public String test(){
 
 
 
 
-        return "test";
-    }
 
 
     @GetMapping("/check")

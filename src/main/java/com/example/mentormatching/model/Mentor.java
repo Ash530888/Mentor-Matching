@@ -7,6 +7,7 @@ public class Mentor {
 
     private List<MenteeRelationship> pendingRequest;
     private List<MenteeRelationship> connectedMentees;
+    private boolean verified = false;
 
     private User user;
 
@@ -18,7 +19,13 @@ public class Mentor {
         connectedMentees = new ArrayList<>();
     }
 
+    public boolean isVerified() {
+        return verified;
+    }
 
+    public void setVerified(boolean verified) {
+        this.verified = verified;
+    }
 
     public void addPendingRequest(MenteeRelationship mentee){
         pendingRequest.add(mentee);
@@ -71,5 +78,9 @@ public class Mentor {
                 .findFirst().orElse(null);
         return relationship;
 
+    }
+
+    public void verifyMentor(boolean b){
+        this.verified = b;
     }
 }

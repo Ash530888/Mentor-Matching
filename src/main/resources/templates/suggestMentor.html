@@ -71,8 +71,7 @@
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
-                        <li class="list-group-item"><input type="radio" id="mentor1" name="mentor" th:value="${mentor.getTestProfile().name}" th:field="*{mentorSelected.mentor}"></li>
-
+                        <li class="list-group-item"><input type="radio" id="mentor1" name="mentor" th:value="${mentor.email}" th:field="*{mentorSelected.mentor}"></li>
 
                     </ul>
                 </div>
@@ -87,7 +86,7 @@
                 <div class="title">
                     <p>Mentee</p>
                 </div>
-                <div class="card" th:each="i:${#numbers.sequence(0,unmatchedMentee.size()-1)}">
+                <div th:if="${unmatchedMentee.size() >0}" class="card" th:each="i:${#numbers.sequence(0,unmatchedMentee.size()-1)}">
                     <img class="card-img-top" src="../static/image/profilePic.jpg" th:src="@{/image/profilePic.jpg}" alt="Profile Picture">
                     <div class="card-body">
                         <h5 class="card-title" th:text="${unmatchedMentee.get(i).getTestProfile().name}">Mentor Full Name</h5>
@@ -96,7 +95,7 @@
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
-                        <li class="list-group-item"><input type="checkbox" id="mentor1" name="mentor" th:value="${unmatchedMentee.get(i).getTestProfile().name}" th:field="*{menteeSelected.menteeSelected[__${i}__]}"></li>
+                        <li class="list-group-item"><input type="checkbox" id="mentor1" name="mentor" th:value="${unmatchedMentee.get(i).email}" th:field="*{menteeSelected.menteeSelected[__${i}__]}"></li>
 
                     </ul>
                 </div>
@@ -141,3 +140,4 @@
             </div>
         </div>
     </div>
+</main>

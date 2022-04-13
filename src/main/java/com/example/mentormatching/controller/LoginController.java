@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,6 +28,8 @@ public class LoginController {
     userService userService;
 
 
+    @GetMapping("/")
+    public String getLandingPage(RedirectAttributes redirectAttributes){ return "redirect:/login";}
 
 
     @GetMapping("/login")
@@ -53,7 +56,7 @@ public class LoginController {
 
 
     @PostMapping("/processSignup")
-    public String processSignup(@ModelAttribute User user,Authentication authentication){
+    public String processSignup(@ModelAttribute User user,Authentication authentication, RedirectAttributes redirectAttributes){
 
         if (authentication != null) {
             UserDetail previousDetail = (UserDetail) authentication.getPrincipal();
@@ -68,7 +71,7 @@ public class LoginController {
         }
 
 
-        return "test";
+        return "redirect:/login";
 
     }
 
