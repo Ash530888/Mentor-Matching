@@ -5,12 +5,20 @@ public class TestMenteeProfile {
     String careerGoal;
     String preferredMentorGender;
     String preferredMentorAge;
-    String preferredMentorRole;
+    String preferredMentorPosition;
     String[] strengths;
     String[] weaknesses;
     //    String[] preferredLanguage;
     String preferredLanguage;
 
+
+    public String getPreferredMentorPosition() {
+        return preferredMentorPosition;
+    }
+
+    public void setPreferredMentorPosition(String preferredMentorPosition) {
+        this.preferredMentorPosition = preferredMentorPosition;
+    }
 
     public String getCareerGoal() {
         return careerGoal;
@@ -36,13 +44,6 @@ public class TestMenteeProfile {
         this.preferredMentorAge = preferredMentorAge;
     }
 
-    public String getPreferredMentorRole() {
-        return preferredMentorRole;
-    }
-
-    public void setPreferredMentorRole(String preferredMentorRole) {
-        this.preferredMentorRole = preferredMentorRole;
-    }
 
     public String[] getStrengths() {
         return strengths;

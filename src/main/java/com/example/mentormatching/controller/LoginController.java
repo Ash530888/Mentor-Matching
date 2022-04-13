@@ -24,6 +24,9 @@ import java.util.List;
 @Controller
 public class LoginController {
 
+
+
+
     @Autowired
     userService userService;
 
@@ -51,6 +54,7 @@ public class LoginController {
             model.addAttribute("update",false);
         }
 
+
         return "signup";
     }
 
@@ -61,6 +65,8 @@ public class LoginController {
         if (authentication != null) {
             UserDetail previousDetail = (UserDetail) authentication.getPrincipal();
             userService.update(previousDetail.getUser(), user);
+            return "redirect:/home";
+
         }
         else{
             System.out.println(user.getUserRole());
@@ -68,10 +74,13 @@ public class LoginController {
             else user.setMenteeStatus();
             System.out.println(user.getTestProfile().getName());
             userService.save(user);
+            System.out.println("Home");
+
+            return "redirect:/login";
+
         }
 
 
-        return "redirect:/login";
 
     }
 

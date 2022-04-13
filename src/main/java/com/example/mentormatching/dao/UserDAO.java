@@ -51,8 +51,37 @@ public class UserDAO {
     public void update(User p, User c){
 
         User found = getUserByEmail(p.getEmail());
-        found.setPassword(c.getPassword());
+
         found.setEmail(c.getEmail());
+        found.setPassword(c.getPassword());
+        found.getTestProfile().setName(c.getTestProfile().getName());
+        found.getTestProfile().setLocation(c.getTestProfile().getLocation());
+        found.getTestProfile().setAge(c.getTestProfile().getAge());
+        found.getTestProfile().setJobPosition(c.getTestProfile().getJobPosition());
+        found.getTestProfile().setGender(c.getTestProfile().getGender());
+        found.getTestProfile().setFieldOfWork(c.getTestProfile().getFieldOfWork());
+        found.getTestProfile().setDescription(c.getTestProfile().getDescription());
+        found.getTestProfile().setLanguages(c.getTestProfile().getLanguages());
+        found.getTestProfile().setLanguages(c.getTestProfile().getLanguages());
+        found.getTestProfile().setSkills(c.getTestProfile().getSkills());
+
+        if (found.getUserRole().equals("MENTOR")){
+            found.getTestMentorProfile().setPreferredMenteeGender(c.getTestMentorProfile().getPreferredMenteeGender());
+            found.getTestMentorProfile().setPreferredMenteeAge(c.getTestMentorProfile().getPreferredMenteeAge());
+            found.getTestMentorProfile().setPreferredMenteeRole(c.getTestMentorProfile().getPreferredMenteeRole());
+            found.getTestMentorProfile().setPreferredMenteeRole(c.getTestMentorProfile().getPreferredMenteeRole());
+
+
+        }else{
+            found.getTestMenteeProfile().setPreferredMentorGender(c.getTestMenteeProfile().getPreferredMentorGender());
+            found.getTestMenteeProfile().setPreferredMentorAge(c.getTestMenteeProfile().getPreferredMentorAge());
+            found.getTestMenteeProfile().setPreferredMentorPosition(c.getTestMenteeProfile().getPreferredMentorPosition());
+            found.getTestMenteeProfile().setPreferredLanguage(c.getTestMenteeProfile().getPreferredLanguage());
+            found.getTestMenteeProfile().setCareerGoal(c.getTestMenteeProfile().getCareerGoal());
+
+        }
+
+
     }
 
 }
