@@ -34,14 +34,14 @@ public class MentorSuggestService {
                     Double.parseDouble(mentorProfileDef.getAge()));
             scores.add(mentorAgeMatchRate);
         }
-        catch(NullPointerException ignored){scores.add(0.0);}
+        catch(NullPointerException | NumberFormatException ignored){scores.add(0.0);}
 
         try {
             double menteeAgeMatchRate = doubleMatchRate(Double.parseDouble(mentorProfileEx.getPreferredMenteeAge()),
                     Double.parseDouble(menteeProfileDef.getAge()));
-            scores.add(menteeAgeMatchRate);
+                    scores.add(menteeAgeMatchRate);
         }
-        catch(NullPointerException ignored){scores.add(0.0);}
+        catch(NullPointerException | NumberFormatException ignored){scores.add(0.0);}
 
         try {
             double mentorGenderMatchRate = strictStringComparisonRate(menteeProfileEx.getPreferredMentorGender(),
