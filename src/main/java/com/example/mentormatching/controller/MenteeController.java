@@ -22,6 +22,8 @@ public class MenteeController {
 
 
 
+
+
     @GetMapping("/send")
     public String getSend(Model model, RedirectAttributes redirectAttributes,Authentication authentication){
         UserDetail userDetail = (UserDetail) authentication.getPrincipal();
@@ -41,4 +43,6 @@ public class MenteeController {
 
         return "sendRequest";
     }
+
+
 }
