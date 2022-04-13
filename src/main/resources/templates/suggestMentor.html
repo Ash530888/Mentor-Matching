@@ -67,7 +67,7 @@
                     <div class="card-body">
                         <h5 class="card-title" th:text="${mentor.testProfile.name}">Mentor Full Name</h5>
                         <p class="card-text" th:text="${mentor.testProfile.jobPosition}">Current Position</p>
-                        <a href="#popup1" class="btn btn-primary">View profile</a>
+                        <a href="#MentorPopup1" class="btn btn-primary">View profile</a>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item" th:text="${mentor.testProfile.description}">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
@@ -91,7 +91,7 @@
                     <div class="card-body">
                         <h5 class="card-title" th:text="${unmatchedMentee.get(i).getTestProfile().name}">Mentor Full Name</h5>
                         <p class="card-text" th:text="${unmatchedMentee.get(i).getTestProfile().jobPosition}">Current Position</p>
-                        <a href="#popup1" class="btn btn-primary">View profile</a>
+                        <a href="#MenteePopup1" class="btn btn-primary">View profile</a>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item" th:text="${unmatchedMentee.get(i).getTestProfile().description}">Request message goes here. Dapibus ac facilisis in. Vestibulum at eros.</li>
@@ -100,7 +100,7 @@
                     </ul>
                 </div>
 
-                <div id="popup1" class="move overlay ">
+                <div id="MenteePopup1" class="move overlay ">
                     <div class="popup" >
                         <h2>Mentee Name</h2>
                         <a class="close" href="#popup">×</a>
@@ -116,6 +116,28 @@
                             <p>Preferred Mentor Role: ...</p>
                             <p>Strengths: ...</p>
                             <p>Weaknesses: ...</p>
+                            <p> </p>
+                            <p>age: ...</p>
+                            <p>location: ...</p>
+                            <p>Job Position: ...</p>
+                            <p>Gender: ...</p>
+                            <p>Field Of Work: ...</p>
+                            <p>Disabilities: ...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="MentorPopup1" class="move overlay ">
+                    <div class="popup" >
+                        <h2>Mentor Name</h2>
+                        <a class="close" href="#popup">×</a>
+                        <div class="content">
+                            <p> </p>
+                            <p>Skills:</p>
+                            <p> </p>
+                            <p>Preferred Mentee Gender: ...</p>
+                            <p>Preferred Mentee Age: ...</p>
+                            <p>Preferred Mentee Role: ...</p>
                             <p> </p>
                             <p>age: ...</p>
                             <p>location: ...</p>
