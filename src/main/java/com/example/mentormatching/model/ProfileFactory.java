@@ -14,7 +14,6 @@ public class ProfileFactory {
     public static final String[] mentorFieldNames = new String[]{
             "Preferred Mentee Gender", "Preferred Mentee Age", " Preferred Mentee Role", "Preferred Language"};
 
-
     public Profile createDefaultProfile(){
         Profile newProfile = new Profile();
         for (String fieldName : defaultFieldNames){
