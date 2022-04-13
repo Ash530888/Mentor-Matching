@@ -137,7 +137,7 @@
                     <label >Mentor</label>
                     <div class="row mt-2">
                         <div class="col">
-                            <select class="form-control" id="exampleFormControlSelect1" >
+                            <select class="form-control" id="exampleFormControlSelect1" th:field="*{testMentorProfile.preferredMenteeGender}" >
                                 <option value="" disabled selected>Prefer Mentee Gender</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
@@ -145,20 +145,18 @@
                             </select>
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Prefer Mentor Field Of Work">
+                            <input type="text" class="form-control" placeholder="Prefer Mentee Age" th:field="*{testMentorProfile.preferredMenteeAge}">
                         </div>
                     </div>
                     <div class="row mt-2">
                         <div class="col">
-                            <input  class="form-control" placeholder="Prefer Mentor Language" >
+                            <input  class="form-control" placeholder="Prefer Mentee Role" th:field="*{testMentorProfile.preferredMenteeRole}" >
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Prefer Mentor Field Of Work">
+                            <input type="text" class="form-control" placeholder="Prefer Mentee Language" th:field="*{testMentorProfile.preferredLanguage}">
                         </div>
                     </div>
-                    <div class="form-group mt-2">
-                        <input  class="form-control" placeholder="Prefer Mentor Language" >
-                    </div>
+
 
                 </div>
 
@@ -171,7 +169,7 @@
             </div>
 
 
-            <button class="btn" type="submit" th:text="${update ==true}? 'Update' : 'Sign up'">Sign up</button>
+            <button class="btn submitBtn" type="submit" th:text="${update ==true}? 'Update' : 'Sign up'">Sign up</button>
 
         </div>
 

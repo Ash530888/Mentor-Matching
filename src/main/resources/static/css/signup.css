@@ -122,3 +122,9 @@ label{
     cursor: pointer;
 
 }
+
+.submitBtn{
+    position: relative;
+    left:50%;
+
+}
