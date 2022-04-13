@@ -74,7 +74,7 @@ public class MentorSuggestService {
                             mentorProfileDef.getPastJobs()));
             scores.add(menteePositionMatch);
         }
-        catch(IllegalArgumentException ignored){scores.add(0.0);}
+        catch(IllegalArgumentException | NullPointerException ignored){scores.add(0.0);}
 
         try {
             double mentorPositionMatch = Math.min(Math.min(stringLevenshteinComparisonRate(
@@ -85,7 +85,7 @@ public class MentorSuggestService {
                             menteeProfileDef.getPastJobs()));
             scores.add(mentorPositionMatch);
         }
-        catch(IllegalArgumentException ignored){scores.add(0.0);}
+        catch(IllegalArgumentException | NullPointerException ignored){scores.add(0.0);}
 
 
         double sum = 0;
